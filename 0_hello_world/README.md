@@ -38,7 +38,7 @@ $ readelf -h hello_asm.o
 $ objdump -s hello_asm.o  
 $ objdump -d hello_asm.o  
 
-Binary executable (skipping all steps)
+Binary executable
 -----------
 $ gcc hello_asm.o -o hello_asm
 
