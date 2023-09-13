@@ -3,7 +3,7 @@
 int main(void) {
 
     int a = 12345;
-    printf("a %7d a\n", a);
-    printf("b %-7d b\n", a);
+    printf("| %7d |\n", a);
+    printf("| %-7d |\n", a);
 
 }
