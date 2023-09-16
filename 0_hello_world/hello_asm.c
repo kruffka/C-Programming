@@ -4,7 +4,7 @@
 
 #define N 5
 
-int main() {
+int main(void) {
 
     printf("hello, world! %d\n", N);
 
