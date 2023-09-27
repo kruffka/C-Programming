@@ -4,7 +4,7 @@
 
 int main(void) {
 
-	int k = 0;
+	int k = 0; // 5
     // 1) while loop
 	while (k < 5) {
 		printf("k = %d\n", k);
@@ -13,7 +13,7 @@ int main(void) {
 	printf("\n");
 
     // 2) do while
-	k = 0;
+	k = 0; // 5
 	do {
 		printf("i = %d\n", k);
         k++;
