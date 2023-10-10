@@ -19,6 +19,6 @@ int main(void) {
     printf("a ^ b = %d\n", a ^ b);
     printf("~a = %d\n", ~a);
     printf("a << 5 = %d\n", a << 5);
-    printf("b >> 3 = %d\n", b >> 2);
+    printf("b >> 2 = %d\n", b >> 2);
 
 }

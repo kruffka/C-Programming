@@ -10,6 +10,7 @@ int main(void) {
     printf("%d == %d == %d == %d\n", dec_var, hex_var, oct_var, bin_var);
 
     char a = 18; // 00010010
+                 //&00000001
 
     printf("hex = %x\n", a);
     printf("dec = %d\n", a);
@@ -18,6 +19,12 @@ int main(void) {
     while (a > 0) {
         printf("%d", a & 1);
         a = a >> 1;
+    }
+    printf("\n");
+
+    a = 18;
+    for (int i = 7; i >= 0; i--) {
+        printf("%d", (a >> i) & 1);
     }
     printf("\n");
 
