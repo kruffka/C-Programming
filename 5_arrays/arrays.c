@@ -35,9 +35,9 @@ int main(void) {
 	     100 101 102 103 104							 112 113 114 115 116
 			   
 		int n = 5;
-		int *p; // sizeof(p) = sizeof(int *) = sizeof(ptr) = 4 or 8 byte (x86_32 or x86_64)
-		p = &n;
-		*p = 2;
+		int *p;   // sizeof(p) = sizeof(int *) = sizeof(ptr) = 4 or 8 byte (x86_32 or x86_64)
+		p = &n;   // p = addr of n
+		*p = 123; // dereference pointer p
 
 	*/
 
