@@ -13,5 +13,5 @@ First-Year Programming Examples in C
 
 			     
 	int n = 5;  
-	int *p; // sizeof(p) = sizeof(int *) = sizeof(ptr) = 4 or 8 byte (x86_32 or x86_64)  
+	int *p; // sizeof(p) = sizeof(int *) = 4 or 8 byte (x86_32 or x86_64)  
 	p = &n;
