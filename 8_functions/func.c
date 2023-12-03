@@ -24,8 +24,14 @@ void test3(int N, int arr[][3]) { // **arr - dynamic; arr[][size] - static
 
 void test4(int a, int b);
 
-void main(int argc, char *argv[]) { // todo argc argv[] example
+int main(int argc, char *argv[]) { // todo argc argv[] example
     
+    if (argc < 2) {
+        printf("Usage: ./func arg\n");
+        return 1;
+    }
+    printf("Nof args %d, arg0 is %s, arg1 is %s\n", argc, argv[0], argv[1]);
+
     int a = 1;
     int b = 1;
 
