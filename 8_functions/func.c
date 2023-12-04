@@ -24,7 +24,7 @@ void test3(int N, int arr[][3]) { // **arr - dynamic; arr[][size] - static
 
 void test4(int a, int b);
 
-int main(int argc, char *argv[]) { // todo argc argv[] example
+int main(int argc, char *argv[]) {
     
     if (argc < 2) {
         printf("Usage: ./func arg\n");
