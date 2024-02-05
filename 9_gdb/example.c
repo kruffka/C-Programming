@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
     printf("after a = %d b = %d\n", a, b);
 
     int my_sum = SUM(1, 2) * 3;
-    printf("my_sum(%d, %d) * 2 = %d\n", a, b, my_sum); // 4?
+    printf("my_sum(1, 2) * 2 = %d\n", my_sum); // 4?
 
 
     // valgrind check here
