@@ -12,4 +12,4 @@ main: main.o functions.o
 	gcc -o main main.o functions.o
 
 clean:
-	rm -rf *.o
+	rm -rf *.o main
