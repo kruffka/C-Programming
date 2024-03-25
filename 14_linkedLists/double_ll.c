@@ -68,7 +68,7 @@ int main(int argc, char *argv[]) {
     // Создаем список из N элементов
     for (int i = 0; i < N; i++) {
         node_t *cur_node = NULL;
-        if (prev_node == NULL) {
+        if (my_list == NULL) {
             cur_node = new_node(i);
             my_list = cur_node;
         } else {
