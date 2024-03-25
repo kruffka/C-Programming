@@ -95,7 +95,6 @@ int main(int argc, char *argv[]) {
         node_t *cur_node = NULL;
         if (prev_node == NULL) {
             cur_node = new_node(i);
-            prev_node = cur_node;
             my_list = cur_node;
         } else {
             cur_node = new_node(i);
