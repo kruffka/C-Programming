@@ -21,20 +21,6 @@ node_t *new_node(int val) {
     return new_node;
 }
 
-// Вставляем элемент в конец списка
-void push_back(node_t **list, int val) {
-    node_t *tmp = *list;
-    if (tmp == NULL) {
-        *list = new_node(val);
-        return;
-    }
-    while (tmp->next) {
-        tmp = tmp->next;
-    }
-    tmp->next = new_node(val);
-}
-
-
 // Рекурсивное освобождение списка
 void free_list(node_t *node) {
 
@@ -49,7 +35,7 @@ void free_list(node_t *node) {
 void print_list(node_t *node) {
     
     while (node) {
-        printf("%d -> ", node->val);
+        printf("%d <-> ", node->val);
         node = node->next;
     }
     printf("NULL\n");
@@ -88,7 +74,7 @@ int main(int argc, char *argv[]) {
     while(1) {
         char key = ' ';
 
-        printf("Value: %d; Addr prev: %p next: %p\n", list_ptr->val, list_ptr->prev, list_ptr->next);
+        printf("Value: %d; Addr prev: %p cur: %p next: %p\n", list_ptr->val, list_ptr->prev, list_ptr, list_ptr->next);
         scanf("%c%*c", &key);
 
         printf("Key entered: '%c'\n", key);
