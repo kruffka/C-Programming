@@ -1,5 +1,5 @@
 # C-Programming
-First-Year Programming Examples in C (2023-2024)  
+First-Year Programming Examples in C 
   
 Pointer  
   
