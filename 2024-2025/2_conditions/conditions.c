@@ -6,23 +6,36 @@
 	!= - not equal
 	== - equal
 	>=, <=
+	>, <
 */
+
 int main(void) {
 
 	int a = 10, b = 5;
+    printf("a = %d, b = %d\n", a, b);
+
+    if (a > b) {
+        printf("a > b\n");
+    }
+
+    b = 20;
+    printf("a = %d, b = %d\n", a, b);
 
     if (a > b) {
         printf("a > b\n");
     } else {
-        printf("b > a\n");
+        printf("a < b\n");
     }
 
-    if (-1) printf("-1 == true\n");
+    b = a;
+    printf("a = %d, b = %d\n", a, b);
 
-    // ternary operator
-    int max;
-    max = a > b ? a : b;
-    printf("max is %d\n", max);
+    if (a > b) {
+        printf("a > b\n");
+    } else if (a < b) {
+        printf("a < b\n");
+    } else
+        printf("a == b\n");
 
 	return 0;
 }
