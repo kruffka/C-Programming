@@ -8,10 +8,13 @@ void meow() {
 
 }
 
-void woof_n_times(int n) {
+void woof_nxn_times(int n) {
 
     for (int i = 0; i < n; i++) {
-        printf("woof!\n");
+        for (int j = 0; j < n; j++) {
+            printf("woof ");
+        }
+        printf("\n");
     }
 
 }
@@ -21,7 +24,7 @@ int main() {
     meow();
     
     int n = 5;
-    woof_n_times(n);
+    woof_nxn_times(n);
 
     return 0;
 }
