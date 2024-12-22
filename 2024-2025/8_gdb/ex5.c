@@ -6,7 +6,7 @@ int char_cmp(const void* a, const void* b)
 }  
 int main() {  
     char greeting[] = "Hello!";      
-    qsort(greeting, sizeof(greeting) - 1, sizeof(*greeting), char_cmp);      
+    qsort(greeting, sizeof(greeting), sizeof(*greeting), char_cmp);      
     printf("%s\n", greeting);      
     return 0;  
 }  
