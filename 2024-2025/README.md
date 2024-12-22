@@ -1,3 +1,8 @@
+# Лекции
+[Лекции](https://github.com/kruffka/C-Programming/blob/master/2024-2025/slides_pptx/)
+[Первый семестр коротко](https://github.com/kruffka/C-Programming/blob/master/2024-2025/slides_pptx/1_sem_short.md)
+
+
 # Команды в терминале  
 -----------
 mkdir my_dir # Создать каталог   my_dir
@@ -14,5 +19,3 @@ CTRL+X (^X) # exit program
 gcc hello.c -o hello  
 ./hello  
 
-
-[Первый семестр коротко](https://github.com/kruffka/C-Programming/blob/master/2024-2025/slides_pptx/1_sem_short.md)
