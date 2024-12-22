@@ -13,3 +13,6 @@ CTRL+X (^X) # exit program
 # Компиляция и запуск  
 gcc hello.c -o hello  
 ./hello  
+
+
+[Первый семестр коротко](https://github.com/kruffka/C-Programming/blob/master/2024-2025/slides_pptx/1_sem_short.md)
