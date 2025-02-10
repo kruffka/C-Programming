@@ -1,8 +1,7 @@
 ### Ссылки
 
-Картинки и код по односвязным спискам отсюда:
-https://www.geeksforgeeks.org/linked-list-in-c/
-https://www.geeksforgeeks.org/singly-linked-list-tutorial/
+Про списки можно посмотреть, например, тут:
+https://www.geeksforgeeks.org/linked-list-in-c/   
 
 ### Списки
 
