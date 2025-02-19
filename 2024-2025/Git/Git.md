@@ -238,9 +238,11 @@ git remote -v
 
 #### Отмена изменений
 
-![alt text](img/go_back.png)   
+![alt text](img/go_back.png)  
 
-https://git-scm.com/book/ru/v2/%d0%9e%d1%81%d0%bd%d0%be%d0%b2%d1%8b-Git-%d0%9e%d0%bf%d0%b5%d1%80%d0%b0%d1%86%d0%b8%d0%b8-%d0%be%d1%82%d0%bc%d0%b5%d0%bd%d1%8b    
+https://git-scm.com/book/ru/v2/%d0%9e%d1%81%d0%bd%d0%be%d0%b2%d1%8b-Git-%d0%9e%d0%bf%d0%b5%d1%80%d0%b0%d1%86%d0%b8%d0%b8-%d0%be%d1%82%d0%bc%d0%b5%d0%bd%d1%8b     
+
+https://ohshitgit.com/ - есть русская версия, ищите сами    
 
 В этой секции нужно быть осторожно с командами - если будете бездумно применять команды, то можете запросто потерять кучу времени, удалив полезные вещи. Ну или нечаянно поднасрать коллегам. 
 
