@@ -390,6 +390,13 @@ git log -1 --format=%h
 git log -1 --format=%cd
 ```
 
+#### git submodules
+https://git-scm.com/docs/git-submodule     
+https://git-scm.com/book/en/v2/Git-Tools-Submodules    
+
+#### Gitlens
+Расширение в VSCode Gitlens может быть полезным при работе с Git, особенно для работы с stash'ами    
+
 #### Фича github: VSCode в github.com
 
 Откройте свой репозиторий, например
