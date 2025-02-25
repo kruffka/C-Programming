@@ -395,7 +395,9 @@ https://git-scm.com/docs/git-submodule
 https://git-scm.com/book/en/v2/Git-Tools-Submodules    
 
 #### Gitlens
-Расширение в VSCode Gitlens может быть полезным при работе с Git, особенно для работы с stash'ами    
+
+Расширение в VSCode Gitlens может быть полезным при работе с Git, особенно для работы с stash'ами      
+![alt text](img/gitlens.png)   
 
 #### Фича github: VSCode в github.com
 
