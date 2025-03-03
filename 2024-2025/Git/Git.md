@@ -1,4 +1,26 @@
-## Система контроля версий Git
+<!-- vscode-markdown-toc -->
+* 1. [Система контроля версий Git](#Git)
+	* 1.1. [Кто такой Git?](#git_who)
+	* 1.2. [Git не следует путать с GitHub и прочими](#GitGitHub)
+	* 1.3. [Практическая часть с Git](#practice)
+		* 1.3.1. [Getting started](#Gettingstarted)
+		* 1.3.2. [Создание Репозитория](#create_repo)
+		* 1.3.3. [Запись изменений в репозиторий (Коммит)](#commit)
+		* 1.3.4. [Удаленные репозитории (push, clone, fetch, pull)](#pushclonefetchpull)
+		* 1.3.5. [Ветвление в Git](#branch)
+		* 1.3.6. [Отмена изменений](#go_back)
+		* 1.3.7. [Версия Git](#git_version)
+		* 1.3.8. [git submodules](#gitsubmodules)
+		* 1.3.9. [Gitlens](#Gitlens)
+		* 1.3.10. [Фича github: VSCode в github.com](#github:VSCodegithub)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
+##  1. <a name='Git'></a>Система контроля версий Git
 
 Нет описания лучше чем описание и документация от самих разработчиков   
 [Книга Pro Git](https://git-scm.com/book/ru/v2)     
@@ -14,7 +36,7 @@
 
 ![alt text](img/git_globe.webp) 
 
-### Кто такой Git?
+###  1.1. <a name='git_who'></a>Кто такой Git?
 
 ![alt text](img/git.png)
 
@@ -39,7 +61,7 @@
 <img src="img/sync.png" width ="500"> 
 
 
-### Git не следует путать с GitHub и прочими
+###  1.2. <a name='GitGitHub'></a>Git не следует путать с GitHub и прочими
 
 **Git** — это инструмент, позволяющий реализовать распределённую систему контроля версий.  
 
@@ -49,8 +71,8 @@
 
 Мы будем работать именно с GitHub - т.к. это доступный для всех начинающих и опытных разработчиков сервис (ну и конечно один из самых популярных).     
 
-### Практическая часть с Git
-#### Getting started
+###  1.3. <a name='practice'></a>Практическая часть с Git
+####  1.3.1. <a name='Gettingstarted'></a>Getting started
 
 [Для использования git нам необходимо установить его](https://git-scm.com/book/ru/v2/%d0%92%d0%b2%d0%b5%d0%b4%d0%b5%d0%bd%d0%b8%d0%b5-%d0%a3%d1%81%d1%82%d0%b0%d0%bd%d0%be%d0%b2%d0%ba%d0%b0-Git)
 
@@ -74,7 +96,7 @@ git config --help
 
 В VSCode дополнительно помощник с git - расширение GitLens    
 
-#### Создание Репозитория
+####  1.3.2. <a name='create_repo'></a>Создание Репозитория
 
 Репозито́рий (от англ. repository — хранилище) — место, где хранятся и поддерживаются какие-либо данные. Иногда можно встретить сокращенно 
 "repo", "git repo". А еще иногда можно услышать "репозитАрий"    
@@ -89,7 +111,7 @@ git init
 ```
 Команды по инициализации репо обычно показываются github когда заходим в наш пустой репо.
 
-#### Запись изменений в репозиторий (Коммит)
+####  1.3.3. <a name='commit'></a>Запись изменений в репозиторий (Коммит)
 Источник: https://git-scm.com/book/ru/v2/%d0%9e%d1%81%d0%bd%d0%be%d0%b2%d1%8b-Git-%d0%97%d0%b0%d0%bf%d0%b8%d1%81%d1%8c-%d0%b8%d0%b7%d0%bc%d0%b5%d0%bd%d0%b5%d0%bd%d0%b8%d0%b9-%d0%b2-%d1%80%d0%b5%d0%bf%d0%be%d0%b7%d0%b8%d1%82%d0%be%d1%80%d0%b8%d0%b9    
 
 Прежде чем залить наши изменения в репо, надо понять какие состояния бывают у наших файлов с кодом   
@@ -199,7 +221,7 @@ git lol (что сокращенно тоже что и git log --oneline --grap
 Отлично, теперь мы научились сохранять наши изменения, смотреть что поменялось и коммитить. Однако после коммита приятно удивимся, что наши изменения все еще не попали в наш репо на github.com. Чтоб это понять нужно прочитать [Удаленные-репозитории](#Удаленные-репозитории (push, clone, fetch, pull))
 
 
-#### Удаленные репозитории (push, clone, fetch, pull)
+####  1.3.4. <a name='pushclonefetchpull'></a>Удаленные репозитории (push, clone, fetch, pull)
 
 https://git-scm.com/book/ru/v2/%d0%9e%d1%81%d0%bd%d0%be%d0%b2%d1%8b-Git-%d0%a0%d0%b0%d0%b1%d0%be%d1%82%d0%b0-%d1%81-%d1%83%d0%b4%d0%b0%d0%bb%d1%91%d0%bd%d0%bd%d1%8b%d0%bc%d0%b8-%d1%80%d0%b5%d0%bf%d0%be%d0%b7%d0%b8%d1%82%d0%be%d1%80%d0%b8%d1%8f%d0%bc%d0%b8   
 
@@ -242,7 +264,7 @@ git remote -v
 По умолчанию появится слово origin - алияс (alias - псевдоним) на нашей системе, под которым подразумевается удаленный репозиторий.    
 
 
-#### Ветвление в Git
+####  1.3.5. <a name='branch'></a>Ветвление в Git
 
 До этого момента мы выполняли изменения довольно линейно, т.е. добавили коммит, изменения, еще изменения, новую фичу - все это было друг за другом.
 ![alt text](img/git_seq.png)   
@@ -308,7 +330,7 @@ https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---ff
 Не забываем книгу про git: https://git-scm.com/book/ru/v2/%d0%92%d0%b5%d1%82%d0%b2%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d0%b2-Git-%d0%9e-%d0%b2%d0%b5%d1%82%d0%b2%d0%bb%d0%b5%d0%bd%d0%b8%d0%b8-%d0%b2-%d0%b4%d0%b2%d1%83%d1%85-%d1%81%d0%bb%d0%be%d0%b2%d0%b0%d1%85    
 
 
-#### Отмена изменений
+####  1.3.6. <a name='go_back'></a>Отмена изменений
 
 ![alt text](img/go_back.png)  
 
@@ -381,7 +403,7 @@ git reset --hard
 git cherry-pick *<commit_sha>*    
 ```
 
-#### Версия Git
+####  1.3.7. <a name='git_version'></a>Версия Git
 
 Обычно для того чтобы различить запускаемую версию при сборке исполняемого файла версию, дату и хэш коммита прошивают в исполняемый файл     
 ```bash
@@ -390,16 +412,16 @@ git log -1 --format=%h
 git log -1 --format=%cd
 ```
 
-#### git submodules
+####  1.3.8. <a name='gitsubmodules'></a>git submodules
 https://git-scm.com/docs/git-submodule     
 https://git-scm.com/book/en/v2/Git-Tools-Submodules    
 
-#### Gitlens
+####  1.3.9. <a name='Gitlens'></a>Gitlens
 
 Расширение в VSCode Gitlens может быть полезным при работе с Git, особенно для работы с stash'ами      
 ![alt text](img/gitlens.png)   
 
-#### Фича github: VSCode в github.com
+####  1.3.10. <a name='VSCodegithub'></a>Фича github: VSCode в github.com
 
 Откройте свой репозиторий, например
 https://github.dev/kruffka/C-Programming

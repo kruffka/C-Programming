@@ -1,8 +1,33 @@
-## Файлы
+<!-- vscode-markdown-toc -->
+* 1. [Файлы](#files)
+* 2. [Kernel Space и User Space](#KernelSpaceUserSpace)
+* 3. [Файловый ввод/вывод (FILE I/O)](#FILEIO)
+* 4. [Функции](#file_io_funcs)
+* 5. [Буферизированный ввод/вывод](#buf_io)
+	* 5.1. [Текстовые файлы (text)](#text)
+		* 5.1.1. [Открыть файл](#open_text)
+		* 5.1.2. [Закрыть файл](#close_text)
+		* 5.1.3. [Функции для чтения](#read_text)
+		* 5.1.4. [Функции для записи](#write_text)
+	* 5.2. [Бинарные файлы (binary)](#binary)
+		* 5.2.1. [Открыть](#open_bin)
+		* 5.2.2. [Закрыть](#close_bin)
+		* 5.2.3. [Чтение](#read_bin)
+		* 5.2.4. [Запись](#write_bin)
+	* 5.3. [Функции для смещения каретки (указателя внутри файла на каком байте находимся)](#move)
+	* 5.4. [Таблица режимов открытия файлов (буферизированный I/O)](#open_modes)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
+##  1. <a name='files'></a>Файлы
 
 Прежде чем пойдем к файлам важно понять про строение и работу ОС    
 
-## Kernel Space и User Space
+##  2. <a name='KernelSpaceUserSpace'></a>Kernel Space и User Space
 
 ![alt text](img/rings.png)     
 https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D1%8C%D1%86%D0%B0_%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D1%8B     
@@ -36,7 +61,7 @@ https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D1%8C%D1%86%D0%B0_%D0%B7%D0%B0%
 - При исполнении системного вызова происходит переключение контекста - это процесс, при котором ОС меняет состояние выполнения программы с пользовательского уровня на уровень ядра или наоборот. Переключение контекста не самая быстрая вещь и по возможности ее стоит избегать для ускорения выполнения программ на CPU.    
 - Системные вызовы - API ядра, т.е. это интерфейс из функций, позволяющий userland программам работать например с тем же железом (записать что-либо на HDD).
 
-## Файловый ввод/вывод (FILE I/O)
+##  3. <a name='FILEIO'></a>Файловый ввод/вывод (FILE I/O)
 
 ![alt text](./img/vfs.png)       
 
@@ -54,9 +79,9 @@ https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D1%8C%D1%86%D0%B0_%D0%B7%D0%B0%
 - Помимо этого в системе у нас много процессов и каждая хочет что-то писать/читать на жесткий диск. Ядро рулит этими записями, сортирует их как надо (чтобы сделать как можно меньше записей на жесткий диск) и в нужный момент времени когда ядро (диспетчер ввода/вывода) будет готов отложенно от этих программ сделает все эти записи на жесткий диск
 - На чтение промежуточный буфер - если наша программа считала с жесткого диска 100 байт, то вероятно через время еще 100 байт захочет считать. Ядро хитрое и читает из жесткого диска в свой буфер наперед.      
 
-## Функции
+##  4. <a name='file_io_funcs'></a>Функции для работы с файловым I/O
 
-Функции для работы с файловым I/O:    
+    
 ```c
 int open(const char *pathname, int flags);
 int open(const char *pathname, int flags, mode_t mode);
@@ -75,7 +100,7 @@ void sync(void);
 - lseek - сместить каретку (указатель внутри файла на каком байте файла мы находимся)
 - sync - слить данные из ядра на жесткий диск
 
-## Буферизированный ввод/вывод
+##  5. <a name='buf_io'></a>Буферизированный ввод/вывод
 
 ![alt text](img/buf_io.png)
 
@@ -96,9 +121,9 @@ void sync(void);
 В си обработка файлов делится на 2 типа - текстовый и бинарный.    
 <img src="./img/types.png" width ="500">        
 
-### Текстовые файлы (text)
+###  5.1. <a name='text'></a>Текстовые файлы (text)
 
-#### Открыть файл 
+####  5.1.1. <a name='open_text'></a>Открыть файл 
 Для работы с файлами необходимо создать указатель на структуру типа FILE.   
 ```c
 FILE *file;
@@ -122,7 +147,7 @@ if (file == NULL) {
 Error opening file: No such file or directory
 ```
 
-#### Закрыть файл
+####  5.1.2. <a name='close_text'></a>Закрыть файл
 ```c
 int fclose(FILE *stream);
 ```
@@ -130,7 +155,7 @@ int fclose(FILE *stream);
 
 EOF == End Of File.    
 
-#### Функции для чтения
+####  5.1.3. <a name='read_text'></a>Функции для чтения
 ```c
 int fscanf(FILE *stream, const char *format, ...);
 ```
@@ -147,7 +172,7 @@ int fgetc(FILE *stream);
 - Считывает один символ из файла и возвращает его
 
 
-#### Функции для записи
+####  5.1.4. <a name='write_text'></a>Функции для записи
 ```c
 int fprintf(FILE *stream, const char *format, ...);
 ```
@@ -163,26 +188,26 @@ int fputc(FILE *stream);
 ```
 - Печатает один символ в файл
   
-### Бинарные файлы (binary)
-#### Открыть
+###  5.2. <a name='binary'></a>Бинарные файлы (binary)
+####  5.2.1. <a name='open_bin'></a>Открыть
 Все также через fopen, но добавляется буковка 'b' в режим открытия (см. мануал или таблицу снизу).
 
-#### Закрыть
+####  5.2.2. <a name='close_bin'></a>Закрыть
 Все также как у текстовых файлов
 
-#### Чтение
+####  5.2.3. <a name='read_bin'></a>Чтение
 ```c
 size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
 ```
 - Считывает указанные байты данных из двоичного файла
 
-#### Запись
+####  5.2.4. <a name='write_bin'></a>Запись
 ```c
 size_t fwrite(void *ptr, size_t size, size_t nmemb, FILE *stream);
 ```
 - Эта функция записывает указанное количество байтов в двоичный файл
 
-### Функции для смещения каретки (указателя внутри файла на каком байте находимся)
+###  5.3. <a name='move'></a>Функции для смещения каретки (указателя внутри файла на каком байте находимся)
 ```c
 int fseek(FILE *stream, long offset, int whence);
 
@@ -196,6 +221,6 @@ void rewind(FILE *stream);
 ```
 - Перемещает указатель (каретку) файла в самое его начало    
 
-### Таблица режимов открытия файлов (буферизированный I/O)
+###  5.4. <a name='open_modes'></a>Таблица режимов открытия файлов (буферизированный I/O)
 Таблица режимов открытия файла:    
 <table><thead><tr><th><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Режимы открытия</font></font></span></th><th><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Описание</font></font></span></th></tr></thead><tbody><tr><td><b><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">r</font></font></strong></b></td><td><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ищет файл. Если файл открыт успешно, fopen() загружает его в память и устанавливает указатель, указывающий на первый символ в нем. Если файл не может быть открыт, fopen() возвращает NULL.</font></font></span></td></tr><tr><td><b><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">rb</font></font></strong></b></td><td><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;Открыть для чтения в двоичном режиме. Если файл не существует, fopen() возвращает NULL.</font></font></span></td></tr><tr><td><b><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">w</font></font></strong></b></td><td><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Открыть для записи в текстовом режиме. Если файл существует, его содержимое перезаписывается. Если файл не существует, создается новый файл. Возвращает NULL, если невозможно открыть файл.</font></font></span></td></tr><tr><td><b><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">wb</font></font></strong></b></td><td><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Открыть для записи в двоичном режиме. Если файл существует, его содержимое перезаписывается. Если файл не существует, он будет создан.</font></font></span></td></tr><tr><td><b><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">a</font></font></strong></b></td><td><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ищет файл. Если файл открыт успешно, fopen() загружает его в память и устанавливает указатель, указывающий на последний символ в нем. Открывается только в режиме добавления. Если файл не существует, создается новый файл. Возвращает NULL, если файл не удалось открыть.</font></font></span></td></tr><tr><td><b><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ab</font></font></strong></b></td><td><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;Открыть для добавления в двоичном режиме. Данные добавляются в конец файла. Если файл не существует, он будет создан.</font></font></span></td></tr><tr><td><b><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">r+</font></font></strong></b></td><td><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ищет файл. Он успешно открыт fopen() загружает его в память и устанавливает указатель, указывающий на первый символ в нем. Возвращает NULL, если файл не удалось открыть.</font></font></span></td></tr><tr><td><b><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">rb+</font></font></strong></b></td><td><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;Открыть для чтения и записи в двоичном режиме. Если файл не существует, fopen() возвращает NULL.</font></font></span></td></tr><tr><td><b><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">w+</font></font></strong></b></td><td><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ищет файл. Если файл существует, его содержимое перезаписывается. Если файл не существует, создается новый файл. Возвращает NULL, если невозможно открыть файл.</font></font></span></td></tr><tr><td><b><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">wb+</font></font></strong></b></td><td><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Открыт для чтения и записи в двоичном режиме. Если файл существует, его содержимое перезаписывается. Если файл не существует, он будет создан.</font></font></span></td></tr><tr><td><b><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">a+</font></font></strong></b></td><td><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ищет файл. Если файл открыт успешно, fopen() загружает его в память и устанавливает указатель, указывающий на последний символ в нем. Он открывает файл как в режиме чтения, так и в режиме добавления. Если файл не существует, создается новый файл. Возвращает NULL, если файл не удалось открыть.</font></font></span></td></tr><tr><td><b><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ab+</font></font></strong></b></td><td><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Открыть для чтения и добавления в двоичном режиме. Если файл не существует, он будет создан.</font></font></span></td></tr></tbody></table>
