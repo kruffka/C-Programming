@@ -31,8 +31,8 @@ int main(int argc, char *argv[]) {
         // заполним случайно
         array[i].value = rand();
         sprintf(array[i].str, "%d", rand());
-
-        fwrite(&array[i], sizeof(struct some_data), 1, file); // запись по одной структуре за раз
+        // Запись по одной структуре за раз
+        fwrite(&array[i], sizeof(struct some_data), 1, file); 
         
         printf("[%d] value %d str %s\n", i, array[i].value, array[i].str);
     }
@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
     }
     printf("Reading from binary file..\n");
     // читаем одной строкой из бинарного файла N раз sizeof(struct some_data)
-    fread(array, sizeof(struct some_data), N, file); // запись по одной структуре за раз
+    fread(array, sizeof(struct some_data), N, file);
     
     printf("[%d] value %d str %s\n", 0, array[0].value, array[0].str);
 
