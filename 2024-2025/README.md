@@ -14,3 +14,15 @@ CTRL+X (^X) # exit program
 gcc hello.c -o hello  
 ./hello  
 
+
+![alt text](Git/img/git_globe.webp)    
+
+![alt text](libraries/img/compilation.png)      
+
+![alt text](files/img/buf_io.png)     
+
+![alt text](algorithms/img/singly_in_memory.png)               
+
+
+
+
