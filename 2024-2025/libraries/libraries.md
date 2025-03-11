@@ -119,9 +119,22 @@ nm main.o
 
 #### Линковка динамической библиотеки
 
+Если кратко, то динамическая линковка происходит во время выполнения программы:
+1. Во время компиляции к исполняемому файлу добавляются ссылки на динамическую библиотеку. Когда программа запускается, операционная система загружает необходимые библиотеки в память
+2. В некоторых случаях программисты могут использовать функции, такие как `dlopen()` (в Linux) или `LoadLibrary()` (в Windows), для явной загрузки библиотек во время выполнения, они же плагины (подробнее см. в гугле или в man)
 
+Пример функций для Linux:
+```c
+#include <dlfcn.h>
 
-Для любознательных: Кому интересно изучить более детально идем читать в интернет или в книжках про PIC (Position-independent code) и таблицы GOT, PLT.    
+void *dlopen(const char *filename, int flags);   
+int dlclose(void *handler);   
+char *dlerror(void);    
+void *dlsym(void *handle, const char *symbol);    
+```
+При компиляции нужно добавить -ldl - ключ для линковщика  
+
+Кому интересно системное программирование и хочется изучить более детально как происходит линковка динамических библиотек - идем читать в интернет или в книжках про **PIC (Position-independent code)** и таблицы **GOT, PLT** с **интересными примерами на ассемблере**.     
 
 ### Сборка статической библиотеки
 
@@ -180,17 +193,7 @@ LD_PRELOAD=./libTESTLIB.so ./binary
 Посмотреть список слинкованных динамически библиотек - команда ldd, пример:
 ```bash
 ldd *binary*
-```
-
-Загрузка библиотеки в любой момент программы - плагины (подробнее см. в гугле или в man)
-```c
-#include <dlfcn.h>
-
-void *dlopen(const char *filename, int flags);   
-int dlclose(void *handler);   
-char *dlerror(void);    
-```
-При компиляции нужно добавить -ldl - ключ для линковщика     
+```   
 
 ### Версионирование библиотек в Linux
 
@@ -217,7 +220,6 @@ target_link_libraries(my_program mylib)
 ```
 
 В add_library указывается слово STATIC для статический и SHARED для динамических.   
-В target_link_libraries указывается    
 
 https://cmake.org/cmake/help/latest/guide/tutorial/Adding%20a%20Library.html        
 https://cmake.org/cmake/help/latest/command/target_link_libraries.html#command:target_link_libraries      
