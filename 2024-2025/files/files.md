@@ -209,7 +209,10 @@ size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
 ```c
 size_t fwrite(void *ptr, size_t size, size_t nmemb, FILE *stream);
 ```
-- Эта функция записывает указанное количество байтов в двоичный файл
+- Эта функция записывает указанное количество байтов в двоичный файл  
+
+https://github.com/kruffka/C-Programming/blob/master/2024-2025/files/binary_bmp.c
+<img src="./img/uii_aa-1.bmp" width ="300">         
 
 ###  5.3. <a name='move'></a>Функции для смещения каретки
 ```c

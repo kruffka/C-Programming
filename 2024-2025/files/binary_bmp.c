@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
             pixel.g = 255;
             pixel.b = 60;
         } else {
-            pixel.r = 176;
+            pixel.b = 0;
         }
         fwrite(&pixel, sizeof(pixel), 1, new_file);
     }
