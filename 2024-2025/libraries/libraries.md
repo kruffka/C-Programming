@@ -16,6 +16,8 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
+[Шпаргалка по командам компиляции библиотек](https://github.com/kruffka/C-Programming/blob/master/2024-2025/libraries/README.md)
+
 <img src="./img/gpntb.png" width ="500">         
 
 ##  1. <a name='libraries'></a>Библиотеки
@@ -66,11 +68,11 @@ extern int printf (const char *__restrict __format, ...);
 
 Получив объектные файлы из двух исходных линковщик (компоновщик/редактор связей) сделает следующее:       
 **Секции data** всех объектных файлов поставит просто друг за другом, тоже самое с **секциями text**.     
-Пройдется по таблицам символов и заполнит все недостающие вызовы функций адресами этих функций. НапримерЖ в main.o вызывается ф-ия sort(), но в main.o нет определения функции sort(), однако ее определение есть в sort.o, линковщик увидит в таблице символов sort.o эту функцию и отдаст ее адрес в main.o.    
+Пройдется по таблицам символов и заполнит все недостающие вызовы функций адресами этих функций. Например в app.o вызывается ф-ия sort(), но в app.o нет определения функции sort(), однако ее определение есть в sort.o, линковщик увидит в таблице символов sort.o эту функцию и отдаст ее адрес в app.o.    
 
 Посмотреть таблицу символов можно через команду на Linux и Mac 'nm', пример: 
 ```bash
-nm main.o
+nm app.o
 ```
 при выводе будут разные буковки: буква D - секция Data, U - undefined, T - секция text.    
 
@@ -155,48 +157,48 @@ void *dlsym(void *handle, const char *symbol);
 ###  1.4. <a name='build_static'></a>Сборка статической библиотеки
 
 ```bash
-gcc file1.c -c
-gcc file2.c -c
+gcc app.c -c
+gcc log.c -c
 
-ar rc libMYLIB.a file1.o file2.o
+ar rc libMY_LOG.a app.o log.o
 
-gcc prog.c -o prog -L. -lMYLIB
-./prog
+gcc app.o -o static_exe -L. -lMY_LOG
+./static_exe
 ```
-где ar - команда для архивации, libMYLIB.a - статическая библиотека, lib - префикс, MYLIB - имя библиотеки, а .a расширение, у всех библиотек обязательно есть префикс lib и расширение    
+где ar - команда для архивации, libMY_LOG.a - статическая библиотека, lib - префикс, MY_LOG - имя библиотеки, а .a расширение, у всех библиотек обязательно есть префикс lib и расширение    
 
-Опции -L. -lMYLIB нужны для линковщика, т.к. наша библиотека появится там, где ее собрали '.' - текущий каталог, а не в стандартных путях ОС (где ищет линковщик), то нам необходимо прописать путь до нее, -L - путь до каталога с библиотекой, -l имя библиотеки.     
+Опции -L. -lMY_LOG нужны для линковщика, т.к. наша библиотека появится там, где ее собрали '.' - текущий каталог, а не в стандартных путях ОС (где ищет линковщик), то нам необходимо прописать путь до нее, -L - путь до каталога с библиотекой, -l имя библиотеки.     
 
 Флаг --static бывает нужен если в этой же папке дин. библиотека с таким же именем. Компилятор по умолчанию выбирает динамическую библиотеку для линковки.     
 
 Посмотреть таблицу символов:     
 ```bash
-nm file1.o 
-nm file2.o
+nm app.o 
+nm log.o
 
-nm libMYLIB.a
+nm libMY_LOG.a
 nm prog
 ```
 
 ###  1.5. <a name='build_dynamic'></a>Сборка динамической библиотеки
 
 ```bash
-gcc file1.c -c
-gcc file2.c -c
+gcc app.c -c
+gcc log.c -c
 
-gcc --shared file1.o file2.o -o libMYLIB.so
+gcc --shared app.o log.o -o libMY_LOG.so
 ```
-Компиляцией дин. библиотеки занимается компилятор. lib - префикс, .so - расширение, а MYLIB - имя библиотеки.       
+Компиляцией дин. библиотеки занимается компилятор. lib - префикс, .so - расширение, а MY_LOG - имя библиотеки.       
 
 Далее линковка и запуск
 
 ```bash
 # -Wl - вызов линковщика, -rpath - путь где искать библиотеку, он вшит в исполняемый файл, '.' - искать в текущем каталоге
-gcc prog.c -o prog -L. -lMYLIB -Wl,-rpath,.
+gcc app.o -o dynamic_exe -L. -lMY_LOG -Wl,-rpath,.
 ./prog
 
 # Прописать в переменную окружения LD_LIBRARY_PATH путь до нашей дин. библиотеки ('.' - текущий каталог)
-gcc prog.c -o prog -L. -lMYLIB
+gcc app.o -o dynamic_exe -L. -lMY_LOG
 LD_LIBRARY_PATH=. ./prog
 ```
 
@@ -208,7 +210,7 @@ LD_PRELOAD=./libTESTLIB.so ./binary
 
 Посмотреть список слинкованных динамически библиотек - команда ldd, пример:
 ```bash
-ldd *binary*
+ldd *dynamic_exe*
 ```   
 
 ###  1.6. <a name='Linux_version'></a>Версионирование библиотек в Linux
@@ -228,14 +230,17 @@ ldd *binary*
 
 ###  1.7. <a name='CMake'></a>Компиляция и линковка библиотек в CMake
 
-Пример создания статической библиотеки mylib из ${MY_LIB_SRC} и линковка этой библиотеки с my_program    
+Пример создания статической библиотеки MY_LOG из ${MY_LIB_SRC} и линковка этой библиотеки с my_program    
 ```cmake
-add_library(mylib STATIC ${MY_LIB_SRC})
+add_library(MY_LOG STATIC ${MY_LIB_SRC})
 
-target_link_libraries(my_program mylib)
+target_link_libraries(my_program MY_LOG)
 ```
 
 В add_library указывается слово STATIC для статический и SHARED для динамических.   
+
+Пример с лекции:    
+https://github.com/kruffka/C-Programming/blob/master/2024-2025/libraries/CMakeLists.txt
 
 https://cmake.org/cmake/help/latest/guide/tutorial/Adding%20a%20Library.html        
 https://cmake.org/cmake/help/latest/command/target_link_libraries.html#command:target_link_libraries      
