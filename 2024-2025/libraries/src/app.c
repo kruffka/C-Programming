@@ -15,9 +15,10 @@ int main(void) {
     MY_LOG2(WARNING, "log2 warn\n");
 
 
-    log_init("./test.log");
-    MY_LOG3(INFO, "finale log\n");
-    MY_LOG3(INFO, "wow\n");
+    log_init("./test.log", DEBUG);
+    LOG_I("finale log\n");
+    LOG_D("wow\n");
+    LOG_E("wow\n");
     log_deinit();
 
     return 0;

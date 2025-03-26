@@ -14,11 +14,12 @@ typedef struct log_s {
     FILE *file;
     bool is_running;
     unsigned int counter;
+    log_type_e level;
 } log_t;
 
 static log_t log_g = {};
 
-int log_init(char *filepath) {
+int log_init(char *filepath, log_type_e log_level) {
 
     if (filepath) {
         log_g.file = fopen(filepath, "w");
@@ -28,6 +29,7 @@ int log_init(char *filepath) {
     }
     log_g.counter = 0;
     log_g.is_running = true;
+    log_g.level = log_level;
 
     return 0;
 }
@@ -62,6 +64,10 @@ int my_log3(log_type_e type, char *type_s, char *str) {
 
     if (type >= END) {
         return -1;
+    }
+
+    if (type > log_g.level) {
+        return 0;
     }
 
     if (!log_g.is_running) {

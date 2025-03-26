@@ -6,7 +6,9 @@
 // type - значение самой type, #type - значение переменной в виде строки, a##b - конкатенация двух значений
 #define MY_LOG2(type, str) my_log2(type, #type, str)
 
-#define MY_LOG3(type, str) my_log3(type, #type, str)
+#define LOG_I(str) my_log3(INFO, "INFO", str)
+#define LOG_D(str) my_log3(DEBUG, "DEBUG", str)
+#define LOG_E(str) my_log3(ERROR, "ERROR", str)
 
 typedef enum log_color {
     INFO = 0, // зеленый
@@ -24,7 +26,7 @@ int my_log2(log_type_e type, char *type_s, char *str);
 
 int my_log3(log_type_e type, char *type_s, char *str);
 
-int log_init(char *filepath);
+int log_init(char *filepath, log_type_e log_level);
 
 void log_deinit(void);
 
