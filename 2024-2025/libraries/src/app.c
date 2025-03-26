@@ -14,5 +14,11 @@ int main(void) {
     MY_LOG2(INFO, "log2 info\n");
     MY_LOG2(WARNING, "log2 warn\n");
 
+
+    log_init("./test.log");
+    MY_LOG3(INFO, "finale log\n");
+    MY_LOG3(INFO, "wow\n");
+    log_deinit();
+
     return 0;
 }

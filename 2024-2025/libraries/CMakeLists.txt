@@ -8,6 +8,7 @@ include_directories("include/")
 
 add_executable(app src/app.c)
 
+# А можно еще и сабдиректории бахнуть для библиотек (add_subdirectory())
 if (BUILD_STATIC)
     # STATIC log lib
     message("Build static")
