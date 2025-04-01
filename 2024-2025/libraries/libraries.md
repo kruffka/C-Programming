@@ -184,7 +184,7 @@ nm prog
 
 ```bash
 gcc app.c -c
-gcc log.c -c
+gcc log.c -c -fPIC
 
 gcc --shared app.o log.o -o libMY_LOG.so
 ```
