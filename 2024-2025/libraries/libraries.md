@@ -160,7 +160,7 @@ void *dlsym(void *handle, const char *symbol);
 gcc app.c -c
 gcc log.c -c
 
-ar rc libMY_LOG.a app.o log.o
+ar rc libMY_LOG.a log.o
 
 gcc app.o -o static_exe -L. -lMY_LOG
 ./static_exe
@@ -195,11 +195,11 @@ gcc --shared app.o log.o -o libMY_LOG.so
 ```bash
 # -Wl - вызов линковщика, -rpath - путь где искать библиотеку, он вшит в исполняемый файл, '.' - искать в текущем каталоге
 gcc app.o -o dynamic_exe -L. -lMY_LOG -Wl,-rpath,.
-./prog
+./dynamic_exe
 
 # Прописать в переменную окружения LD_LIBRARY_PATH путь до нашей дин. библиотеки ('.' - текущий каталог)
 gcc app.o -o dynamic_exe -L. -lMY_LOG
-LD_LIBRARY_PATH=. ./prog
+LD_LIBRARY_PATH=. ./dynamic_exe
 ```
 
 Также есть переменная для линковщика позволяющая предзагрузить дин. библиотеку    

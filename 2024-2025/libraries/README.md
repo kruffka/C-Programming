@@ -66,4 +66,4 @@ LD_LIBRARY_PATH=. ./dynamic_exe
 [CMake пример](https://github.com/kruffka/C-Programming/blob/master/2024-2025/libraries/CMakeLists.txt)
 
 https://cmake.org/cmake/help/latest/guide/tutorial/Adding%20a%20Library.html           
-https://cmake.org/cmake/help/latest/command/target_link_libraries.html#command:target_link_libraries       
+https://cmake.org/cmake/help/latest/command/target_link_libraries.html#command:target_link_libraries
