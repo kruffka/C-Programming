@@ -1,5 +1,5 @@
 # C-Programming
-First-Year Programming Examples in C 
+Лекции и практические примеры по Программированию для 1 курса СибГУТИ
   
 Pointer  
   
