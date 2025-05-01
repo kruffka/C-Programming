@@ -138,33 +138,73 @@ Then ‘Welcome to our site’ message displayed
 
 ![alt text](img/aaa.png)      
 
-#### Попробуем написать свои тесты
+#### Попробуем написать свои тесты (используя C и CMocka)
 ![alt text](./img/prob.png)
 
 ##### Список фреймворков для разных Языков Программирования   
 
 https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks
 
-Для языка Си как и для других языков есть очень много разных фреймворков для тестирования, но мы рассмотрим пару примеров на элегантном CMocka:
+Для языка Си как и для других языков есть очень много разных фреймворков для тестирования, но мы рассмотрим пару примеров на элегантном CMocka. Ссылки на доки:    
 - https://cmocka.org/
 - https://cmocka.org/talks/cmocka_unit_testing_and_mocking.pdf
+- https://api.cmocka.org/index.html
 
+#### CMocka
 ##### Инсталляция
 
+Например можно так:
+```bash
+sudo apt install libcmocka-dev
+```
+
+##### Линковка
+
+При компиляции линкуем с библиотекой CMocka:
+```bash
+gcc test_sum.c example.c -lcmocka
+gcc test_file.c file.c -lcmocka
+```
+
+#### Unit тесты на cmocka
+
+Пару примеров с тестами:    
+
+https://github.com/kruffka/C-Programming/blob/master/2024-2025/sw_testing/tests/test_example.c      
+
+https://github.com/kruffka/C-Programming/blob/master/2024-2025/sw_testing/tests/test_file.c       
+
+#### CMocka форматтер
+```bash
+CMOCKA_MESSAGE_OUTPUT=stdout ./test
+CMOCKA_MESSAGE_OUTPUT=subunit ./test
+CMOCKA_MESSAGE_OUTPUT=tap ./test
+CMOCKA_MESSAGE_OUTPUT=xml ./test
+```
+
+#### Ctest форматтер
+
+Ищем в гугле или у китайского кореша CMake и CTest
 
 
-
-##### Прикрепить к своей программе
-
-
-##### Примеры
+##### Function Mock в CMocka
+https://api.cmocka.org/group__cmocka__mock.html
 
 
 #### Code Coverage (Покрытие кода)
 
-Code Coverage — это метрика покрытия кода, не метрика закрытия требований 
+**Code Coverage** — это метрика покрытия кода, не метрика закрытия требований     
 
-Покрытие тестами на 100% != Качество кода
+**Покрытие тестами на 100% != Качество кода**     
 ![alt text](img/coverage.png)
 
-#### Function Mock
+### CI/CD
+https://habr.com/ru/companies/otus/articles/515078/      
+
+Непрерывная интеграция (Continuous Integration, CI) и непрерывная поставка (Continuous Delivery, CD) представляют собой культуру, набор принципов и практик, которые позволяют разработчикам чаще и надежнее развертывать изменения программного обеспечения.     
+
+Непрерывная интеграция — это методология разработки и набор практик, при которых в код вносятся небольшие изменения с частыми коммитами. И поскольку большинство современных приложений разрабатываются с использованием различных платформ и инструментов, то появляется необходимость в механизме интеграции и тестировании вносимых изменений.      
+
+![alt text](./img/ci_cd.png)
+
+А тут что-нибудь покажу с CI в GitLab, мб докерами на лекции..
