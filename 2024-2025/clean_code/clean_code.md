@@ -326,6 +326,69 @@ while (running) {
 ```
 Погуглите: как пишет код для NASA и спутников, к которым доступа для отладки нет, написал код и он улетел в космос.. 
 
+#### goto
+goto - неплохо, но.. лучше не изобретать циклы с ним, 
+
+```c
+// ✅ Окэй
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+        for (int k = 0; k < p; k++) {
+            if (matrix[i][j][k] == target) {
+                goto found; // Приемлемо: самый чистый способ выйти из нескольких циклов
+            }
+        }
+    }
+}
+// Элемент не найден
+return -1;
+
+found:
+// Обработка найденного элемента
+return process(i, j, k);
+
+int processFile() {
+    FILE *f1 = fopen("file1.txt", "r");
+    if (!f1) return -1;
+    
+    FILE *f2 = fopen("file2.txt", "w");
+    if (!f2) {
+        fclose(f1);
+        return -1;
+    }
+    
+    // Работа с файлами
+    if (error_condition) {
+        goto cleanup; // Хорошо: централизованная очистка
+    }
+    
+    // ... основной код ...
+    
+cleanup:
+    fclose(f1);
+    fclose(f2);
+    return 0;
+}
+
+// ❌ не окэй
+
+#include <iostream>
+
+int main() {
+    int x = 0;
+    
+start:
+    x++;
+    std::cout << x << " ";
+    
+    if (x < 5) {
+        goto start; // Плохо: создает трудночитаемый цикл
+    }
+    
+    std::cout << std::endl;
+    return 0;
+}
+```
 
 ### Функции
 
