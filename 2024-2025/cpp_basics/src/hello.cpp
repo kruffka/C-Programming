@@ -1,13 +1,10 @@
-/*
-    Компиляция и запуск:
-    g++ hello.cpp -o hello
-    ./hello
-*/
-
 #include <iostream>
+#include <string>
 
 int main() {
-
-    std::cout << "Hello, world!" << std::endl;
-    return 0;
+    std::string name;
+    std::cin >> name;
+    // std::getline(std::cin, name);
+    std::cout << "Hello, " << name << "!\n";
+    
 }
