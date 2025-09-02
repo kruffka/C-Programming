@@ -15,7 +15,7 @@
 
 ## 📖 Лекции
 
-[Лекция 0_hello_world](https://github.com/kruffka/C-Programming/blob/2025-2026/0_hello_world/README.md)
+[0_hello_world](https://github.com/kruffka/C-Programming/blob/2025-2026/0_hello_world/README.md)
 
 
 ## 📚 О курсе
