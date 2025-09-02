@@ -25,49 +25,61 @@ CTRL+X (^X) # exit program
 # Compile and run
 Версия компилятора (проверка что вообще установлен)
 -----------
+```bash
 gcc --version
-
+```
 Compile and run program
 -----------
-$ gcc hello_world.c -o hello_world  
-$ ./hello_world
+```bash
+gcc hello_world.c -o hello_world  
+./hello_world
+```
 
 or  
-
-$ gcc hello_world.c  
-$ ./a.out
+```bash
+gcc hello_world.c  
+./a.out
+```
 
 
 # Compilation steps
 
 Input:  
-Source file: hello_gcc.c
+Source file: hello.c
 
 Preprocessor (*.i)
 -----------
-$ gcc -E hello_gcc.c -o hello_gcc.i  
-
+```bash
+gcc -E hello.c -o hello.i  
+```
 Assembly (*.s)
 -----------
-$ gcc -S hello_gcc.i -o hello_gcc.s
-
+```bash
+gcc -S hello.i -o hello.s
+```
 Machine Code (object file, *.o)
 -----------
-$ gcc -c hello_gcc.s -o hello_gcc.o
-
+```bash
+gcc -c hello.s -o hello.o
+```
 #### ELF Header  
-$ readelf -h hello_gcc.o  
-
+```bash
+readelf -h hello.o  
+```
 #### Machine code (disassemble)
-$ objdump -s hello_gcc.o  
-$ objdump -d hello_gcc.o  
+```bash
+objdump -s hello.o  
+objdump -d hello.o  
+```
 
 Binary executable
 -----------
-$ gcc hello_gcc.o -o hello_gcc
-
+```bash
+gcc hello.o -o hello
+```
 
 Output:  
 binary executable program  
-$ ./hello_gcc
-
+```bash
+./hello
+```
