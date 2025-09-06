@@ -1,8 +1,16 @@
+# 0_hello_world
+
+- Языки программирования
+- Компиляция и Интерпретация
+- Переменные и константы
+- Этапы компиляции
+
+
 ## Ссылки
 
-[Лекция](https://github.com/kruffka/C-Programming/blob/d08d7e75f2adc9935c9089b66ae8c19487ba45d0/0_hello_world/lecture.md)      
+[Лекция](https://github.com/kruffka/C-Programming/blob/2025-2026/0_hello_world/lecture.md)      
 [Презентация](https://github.com/kruffka/C-Programming/blob/2025-2026/0_hello_world/0_hello_world.pdf)         
-[Исходный код](https://github.com/kruffka/C-Programming/blob/425ce515c4de4afe295e00edbed655d204011dc7/0_hello_world/src/)           
+[Исходный код](https://github.com/kruffka/C-Programming/blob/2025-2026/0_hello_world/src/)           
 
 -----------
 
