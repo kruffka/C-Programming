@@ -1,16 +1,14 @@
-# 1_conditions
+# 2_loops
 
-- Ввод с клавиатуры
-- Type Casting
-- Условия и условные операторы
-- Тернарный оператор
-- switch-case
+- Циклы
+- break/continue
+- loop unrolling
 
 ## Ссылки
 
-[Лекция](https://github.com/kruffka/C-Programming/blob/2025-2026/1_conditions/lecture.md)      
-[Презентация](https://github.com/kruffka/C-Programming/blob/2025-2026/1_conditions/1_conditions.pdf)         
-[Исходный код](https://github.com/kruffka/C-Programming/blob/2025-2026/1_conditions/src/)           
+[Лекция](https://github.com/kruffka/C-Programming/blob/2025-2026/2_loops/lecture.md)      
+[Презентация](https://github.com/kruffka/C-Programming/blob/2025-2026/2_loops/2_loops.pdf)         
+[Исходный код](https://github.com/kruffka/C-Programming/blob/2025-2026/2_loops/src/)           
 
 -----------
 
