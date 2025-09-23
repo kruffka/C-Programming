@@ -6,7 +6,7 @@
 
 [Лекция](https://github.com/kruffka/C-Programming/blob/2025-2026/4_bitwise_ops/lecture.md)           
 [Презентация](https://github.com/kruffka/C-Programming/blob/2025-2026/4_bitwise_ops/4_bitwise_ops.pdf)               
-[Исходный код](https://github.com/kruffka/C-Programming/blob/2025-2026/4_bitwise_ops/src/)                  
+[Примеры](https://github.com/kruffka/C-Programming/blob/2025-2026/4_bitwise_ops/src/)                  
 
 
 Битовые операции:

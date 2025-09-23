@@ -10,7 +10,7 @@
 
 [Лекция](https://github.com/kruffka/C-Programming/blob/2025-2026/0_hello_world/lecture.md)      
 [Презентация](https://github.com/kruffka/C-Programming/blob/2025-2026/0_hello_world/0_hello_world.pdf)         
-[Исходный код](https://github.com/kruffka/C-Programming/blob/2025-2026/0_hello_world/src/)           
+[Примеры](https://github.com/kruffka/C-Programming/blob/2025-2026/0_hello_world/src/)           
 
 -----------
 

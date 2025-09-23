@@ -8,7 +8,7 @@
 
 [Лекция](https://github.com/kruffka/C-Programming/blob/2025-2026/2_loops/lecture.md)      
 [Презентация](https://github.com/kruffka/C-Programming/blob/2025-2026/2_loops/2_loops.pdf)         
-[Исходный код](https://github.com/kruffka/C-Programming/blob/2025-2026/2_loops/src/)           
+[Примеры](https://github.com/kruffka/C-Programming/blob/2025-2026/2_loops/src/)           
 
 -----------
 

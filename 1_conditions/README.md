@@ -10,7 +10,7 @@
 
 [Лекция](https://github.com/kruffka/C-Programming/blob/2025-2026/1_conditions/lecture.md)      
 [Презентация](https://github.com/kruffka/C-Programming/blob/2025-2026/1_conditions/1_conditions.pdf)         
-[Исходный код](https://github.com/kruffka/C-Programming/blob/2025-2026/1_conditions/src/)           
+[Примеры](https://github.com/kruffka/C-Programming/blob/2025-2026/1_conditions/src/)           
 
 -----------
 
