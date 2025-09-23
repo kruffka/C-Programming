@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+void print_bin(int dec) {
+    // в обратном порядке for (int i = 0; i < sizeof(dec)*8 ; i++)
+    for (int i = sizeof(dec)*8 - 1; i >= 0 ; i--) {
+        printf("%d", (dec >> i) & 1);
+    }
+    printf("\n");
+}
+
 int main(void) {
 
     char dec = 123;
@@ -11,11 +19,6 @@ int main(void) {
     printf("%d == 0x%x == 0%o == 0b", dec, hex, oct);
 
 
-    // в обратном порядке for (int i = 0; i < sizeof(dec)*8 ; i++)
-    for (int i = sizeof(dec)*8 - 1; i >= 0 ; i--) {
-        printf("%d", (dec >> i) & 1);
-    }
-    printf("\n");
-
+    print_bin(bin);
 
 }
