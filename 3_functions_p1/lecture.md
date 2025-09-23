@@ -13,9 +13,10 @@
 	numbering=true
 	autoSave=true
 	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc --># Functions part 1
+<!-- /vscode-markdown-toc -->
+# Functions part 1
             
-<img src="img/intro.png" width="200"/>               
+<img src="img/intro.png" width="200"/>                      
 
 ##  1. <a name='1'></a>Функции?
 
