@@ -21,7 +21,7 @@
 
 [2_loops. Циклы](https://github.com/kruffka/C-Programming/blob/2025-2026/2_loops/README.md)                      
 
-[3_bitwise_ops. Битовые операии](https://github.com/kruffka/C-Programming/blob/2025-2026/3_bitwise_ops/README.md)                      
+[4_bitwise_ops. Битовые операии](https://github.com/kruffka/C-Programming/blob/2025-2026/4_bitwise_ops/README.md)                      
 
 ## 📚 О курсе
 Изучать будем с самого нуля, т.е. те кто впервые вообще слышит о программировании – **не страшно**.    

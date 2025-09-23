@@ -75,7 +75,7 @@ printf("%d == %x == %o == ?", dec, hex, oct);
 
 **Важно:** не путать один символ `&` - **побитовое И**, а два символа `&&` - это уже **логическое И**, тоже самое с ИЛИ                     
 
-Полный пример со всеми побитовыми операциями в [bitwise_ops.c](https://github.com/kruffka/C-Programming/blob/2025-2026/3_bitwise_ops/src/bitwise_ops.c)                 
+Полный пример со всеми побитовыми операциями в [bitwise_ops.c](https://github.com/kruffka/C-Programming/blob/2025-2026/4_bitwise_ops/src/bitwise_ops.c)                 
 
 ###  3.1. <a name='3.1'></a>Побитовое И "&"
 
@@ -251,7 +251,7 @@ char a = -128; // = 10000000
 a = a >> 1; // = 11000000 = -64
 ```                     
 
-Пример со сдвигами [shift.c](https://github.com/kruffka/C-Programming/blob/2025-2026/3_bitwise_ops/src/shift.c)               
+Пример со сдвигами [shift.c](https://github.com/kruffka/C-Programming/blob/2025-2026/4_bitwise_ops/src/shift.c)               
  
 
 **Самостоятельно:** 
@@ -318,5 +318,5 @@ sizeof(a); // = 1 байт
 sizeof(int); // = 4 байта (вероятнее всего)
 ```         
 
-Теперь, узнав побитовые операции, мы должны смочь вывести на экран с помощью printf значение в двоичном виде [printf_bin.c](https://github.com/kruffka/C-Programming/blob/2025-2026/3_bitwise_ops/src/printf_bin.c)             
+Теперь, узнав побитовые операции, мы должны смочь вывести на экран с помощью printf значение в двоичном виде [printf_bin.c](https://github.com/kruffka/C-Programming/blob/2025-2026/4_bitwise_ops/src/printf_bin.c)             
 
