@@ -15,6 +15,8 @@
 
 ## 📖 Лекции
 
+[VSCode. Установка, настройка, отладка и Git](https://github.com/kruffka/C-Programming/blob/2025-2026/VSCode/README.md)              
+
 [0_hello_world. Вводная лекция. Компиляция. Переменные и константы](https://github.com/kruffka/C-Programming/blob/2025-2026/0_hello_world/README.md)             
 
 [1_conditions. Ввод с клавиатуры и условия](https://github.com/kruffka/C-Programming/blob/2025-2026/1_conditions/README.md)                
