@@ -15,17 +15,20 @@
 
 ## 📖 Лекции
 
-[VSCode. Установка, настройка, отладка и Git](https://github.com/kruffka/C-Programming/blob/2025-2026/vscode/README.md)              
+[How to VSCode](https://github.com/kruffka/C-Programming/blob/2025-2026/vscode/README.md)                    
 
-[0_hello_world. Вводная лекция. Компиляция. Переменные и константы](https://github.com/kruffka/C-Programming/blob/2025-2026/0_hello_world/README.md)             
+[0_hello_world. Вводная лекция. Компиляция. Переменные и константы](https://github.com/kruffka/C-Programming/blob/2025-2026/0_hello_world/README.md)              
 
-[1_conditions. Ввод с клавиатуры и условия](https://github.com/kruffka/C-Programming/blob/2025-2026/1_conditions/README.md)                
+[1_conditions. Ввод с клавиатуры и условия](https://github.com/kruffka/C-Programming/blob/2025-2026/1_conditions/README.md)                  
 
 [2_loops. Циклы](https://github.com/kruffka/C-Programming/blob/2025-2026/2_loops/README.md)                      
 
-[3_functions_p1. Функции ч.1](https://github.com/kruffka/C-Programming/blob/2025-2026/3_functions_p1/README.md)                      
+[3_functions_p1. Функции ч.1](https://github.com/kruffka/C-Programming/blob/2025-2026/3_functions_p1/README.md)                       
 
-[4_bitwise_ops. Битовые операии](https://github.com/kruffka/C-Programming/blob/2025-2026/4_bitwise_ops/README.md)                      
+[4_bitwise_ops. Битовые операии](https://github.com/kruffka/C-Programming/blob/2025-2026/4_bitwise_ops/README.md)            
+
+[5_arrays. Массивы](https://github.com/kruffka/C-Programming/blob/2025-2026/5_arrays/README.md)      
+
 
 ## 📚 О курсе
 Изучать будем с самого нуля, т.е. те кто впервые вообще слышит о программировании – **не страшно**.    
