@@ -319,4 +319,3 @@ sizeof(int); // = 4 байта (вероятнее всего)
 ```         
 
 Теперь, узнав побитовые операции, мы должны смочь вывести на экран с помощью printf значение в двоичном виде [printf_bin.c](https://github.com/kruffka/C-Programming/blob/2025-2026/4_bitwise_ops/src/printf_bin.c)             
-
