@@ -17,6 +17,8 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
+         
+<img src="img/while_walk.gif" width="300"/>                            
 
 
 # Loops

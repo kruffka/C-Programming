@@ -23,7 +23,8 @@
 	numbering=true
 	autoSave=true
 	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc --># Arrays
+<!-- /vscode-markdown-toc -->
+# Arrays
 ##  1. <a name='1'></a>Массивы
 
 Представим, что перед нами стоит задача посчитать средний балл для 3 студентов по Матану.                      
