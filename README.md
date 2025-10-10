@@ -27,7 +27,9 @@
 
 [4_bitwise_ops. Битовые операии](https://github.com/kruffka/C-Programming/blob/2025-2026/4_bitwise_ops/README.md)            
 
-[5_arrays. Массивы. Матрицы. Строки](https://github.com/kruffka/C-Programming/blob/2025-2026/5_arrays/README.md)      
+[5_arrays. Массивы. Матрицы. Строки](https://github.com/kruffka/C-Programming/blob/2025-2026/5_arrays/README.md)          
+
+[6_pointers. Указатели. Динамические массивы. Стек и Куча. Виртуальная память](https://github.com/kruffka/C-Programming/blob/2025-2026/6_pointers/README.md)                
 
 
 ## 📚 О курсе
