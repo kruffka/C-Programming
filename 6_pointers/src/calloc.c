@@ -3,7 +3,7 @@
 
 int main() {
 
-    int *arr = (int *)calloc(3, sizeof(int));           
+    int *arr = calloc(3, sizeof(*arr));           
 
     if (arr == NULL) {
         printf("Error malloc!\n");

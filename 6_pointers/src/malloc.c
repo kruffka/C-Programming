@@ -3,8 +3,8 @@
 
 int main() {
 
-    // Выделяем 12 байт (3 размера int). Возвращаемый результат преобразуем к (int *), т.к. malloc возвращает (void *) 
-    int *arr = (int *)malloc(3*sizeof(int));           
+    // Выделяем 12 байт (3 размера int)
+    int *arr = malloc(3*sizeof(int));           
 
     if (arr == NULL) {
         printf("Error malloc!\n");

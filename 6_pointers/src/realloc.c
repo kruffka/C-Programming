@@ -7,7 +7,7 @@
 
 int main() {
 
-    char *str = (char *)malloc(N * sizeof(char)); // выделяем массив размером N байт
+    char *str = malloc(N * sizeof(char)); // выделяем массив размером N байт
     if (str == NULL) return -1;
 
     strncpy(str, "hello", N);
@@ -15,8 +15,9 @@ int main() {
 
     printf("str = %s\n", str);
 
-    str = realloc(str, M * sizeof(char)); // уменьшим массив до M байт
-    if (str == NULL) return -1;
+    // Если в realloc неудача - мы потеряем указатель на str, что была выделена ранее
+    char *tmp = realloc(str, M * sizeof(char)); // уменьшим массив до M байт
+    if (tmp != NULL) str = tmp;
 
     strncpy(str, "bye", M);
     str[M - 1] = '\0';
