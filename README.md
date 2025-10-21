@@ -29,8 +29,11 @@
 
 [5_arrays. Массивы. Матрицы. Строки](https://github.com/kruffka/C-Programming/blob/2025-2026/5_arrays/README.md)          
 
-[6_pointers. Указатели. Динамические массивы. Модель памяти Языка Си. Виртуальная память](https://github.com/kruffka/C-Programming/blob/2025-2026/6_pointers/README.md)                
+[6_pointers. Указатели. Динамические массивы. Модель памяти Языка Си. Виртуальная память](https://github.com/kruffka/C-Programming/blob/2025-2026/6_pointers/README.md)                          
 
+[7_functions_p2. Функции ч.2](https://github.com/kruffka/C-Programming/blob/2025-2026/7_functions_p2/README.md)                    
+
+[8_preprocessor. Препроцессорные директивы](https://github.com/kruffka/C-Programming/blob/2025-2026/8_preprocessor/README.md)                    
 
 ## 📚 О курсе
 Изучать будем с самого нуля, т.е. те кто впервые вообще слышит о программировании – **не страшно**.    

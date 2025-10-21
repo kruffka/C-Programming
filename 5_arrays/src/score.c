@@ -13,6 +13,5 @@ int main() {
     int scores[3] = {77, 43, 100};
     float avg2 = (scores[0] + scores[1] + scores[2]) / 3;
     printf("Scores: %d, %d, %d; avg = %f\n", scores[0], scores[1], scores[2], avg2);
-
     return 0;
 }
