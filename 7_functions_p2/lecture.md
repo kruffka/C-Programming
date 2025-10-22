@@ -18,7 +18,7 @@
 <!-- /vscode-markdown-toc -->
 
 
-# 8_function_p2
+# 7_function_p2
 ##  1. <a name='1'></a>Part 1
 
 Сначала лучше понять [функции часть 1](https://github.com/kruffka/C-Programming/blob/68d3b54087e3a111c3f517c7c45ccde86d2d055d/3_functions_p1/lecture.md)          
