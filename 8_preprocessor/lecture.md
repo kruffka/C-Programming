@@ -144,6 +144,8 @@ src/constants.c:7
     // иначе этот код войдет в программу
 #endif
 ```
+для более сложных условий типа else if - есть директива #elif                  
+
 Определить можно через define, либо при компиляции через опцию -D:
 ```bash
 gcc src/cond.c -o cond -DB=5
@@ -186,7 +188,7 @@ int sum(int x, int y) {
 ```c
 #define PRINT_DEBUG(format, ...)                                                                        \
 	do {                                                                                                \
-            printf("%s:%d:%s(): ", format,  __FILE__, __LINE__, __FUNCTION__, __VA_ARGS__);             \
+            printf("%s:%d:%s(): " format,  __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__);             \
     } while(0)
 ```
 где do .. while(0) здесь нужен для того чтобы мы подобно вызовам функций в конце вызова макроса ставили `;`
