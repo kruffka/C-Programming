@@ -485,7 +485,10 @@ cat /proc/cpuinfo | grep avx
 Такие инструкции в обязательно порядке используются при написании кода, который постоянно работает с векторами данных и очень-очень важна скорость работы    
 
 Intel x86 дока с такими инструкциями (интринсики):      
-https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html       
+https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html      
+
+Мини лекция по этой теме:         
+[simd](https://github.com/kruffka/C-Programming/blob/2024-2025/threads/simd.md)                    
 
 ####  1.6.4. <a name='lock-free'></a>lock-free алгоритмы
 
