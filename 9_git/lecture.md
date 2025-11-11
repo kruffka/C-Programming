@@ -40,15 +40,8 @@
 
 ##  1. <a name='1'></a>Кто такой Git?
 
-![alt text](img/git.png)<img src="img/pocoyo_dance.gif" class="transformed-gif" />
-<style>
-.transformed-gif {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    transform: scale(1); /* увеличение с обрезкой краев */
-}
-</style>                 
+![alt text](img/git.png)<img src="img/pocoyo_dance.gif" style="height: 200px; object-fit: cover;" />
+             
                                  
 Git (произносится «гит») — распределённая система управления версиями. Проект был создан Линусом Торвальдсом для управления разработкой ядра Linux, первая версия выпущена 7 апреля 2005 года                               
 
