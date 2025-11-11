@@ -33,7 +33,10 @@
 
 [7_functions_p2. Функции ч.2](https://github.com/kruffka/C-Programming/blob/2025-2026/7_functions_p2/README.md)                    
 
-[8_preprocessor. Препроцессорные директивы](https://github.com/kruffka/C-Programming/blob/2025-2026/8_preprocessor/README.md)                    
+[8_preprocessor. Препроцессорные директивы](https://github.com/kruffka/C-Programming/blob/2025-2026/8_preprocessor/README.md)             
+
+[9_git. Система контроля версий Git](https://github.com/kruffka/C-Programming/blob/2025-2026/9_git/README.md)            
+
 
 ## 📚 О курсе
 Изучать будем с самого нуля, т.е. те кто впервые вообще слышит о программировании – **не страшно**.    
@@ -61,6 +64,17 @@
 - Обсудим ИИ вместе с ИИ
 - Что-нибудь еще, что щас не вспомню
 - Ну и немного мемов, профессия разработчика нервная.. смех полезен
+
+<img src="9_git/img/pocoyo_dance.gif" class="transformed-gif" />
+<style>
+.transformed-gif {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transform: scale(1); /* увеличение с обрезкой краев */
+}
+</style>    
+
 
 ```
 +----------------------+  0xffffffff
