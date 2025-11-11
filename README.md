@@ -65,15 +65,7 @@
 - Что-нибудь еще, что щас не вспомню
 - Ну и немного мемов, профессия разработчика нервная.. смех полезен
 
-<img src="9_git/img/pocoyo_dance.gif" class="transformed-gif" />
-<style>
-.transformed-gif {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    transform: scale(1); /* увеличение с обрезкой краев */
-}
-</style>    
+<img src="9_git/img/pocoyo_dance.gif"/>
 
 
 ```
