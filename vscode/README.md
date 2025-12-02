@@ -114,16 +114,15 @@ C/C++ IntelliSense, debugging, and code browsing.
 
 ##  5. <a name='5'></a>Git
 
-(Скоро появится)
+[Лекция по Git](https://github.com/kruffka/C-Programming/blob/2025-2026/9_git/lecture.md)
 
 ###  5.1. <a name='5.1'></a>Gitlens
 
-(Ждем)
+Полезное расширение (см. в гугле)
 
 ##  6. <a name='6'></a>Отладка
 
 (Скоро появится)
-
 
 ##  7. <a name='7'></a>Сборка
 
