@@ -37,6 +37,7 @@
 
 [9_git. Система контроля версий Git](https://github.com/kruffka/C-Programming/blob/2025-2026/9_git/README.md)            
 
+[10_struct_union. Структуры и объединения](https://github.com/kruffka/C-Programming/blob/2025-2026/10_struct_union/README.md)            
 
 ## 📚 О курсе
 Изучать будем с самого нуля, т.е. те кто впервые вообще слышит о программировании – **не страшно**.    
