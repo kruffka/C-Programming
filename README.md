@@ -39,6 +39,9 @@
 
 [10_struct_union. Структуры и объединения](https://github.com/kruffka/C-Programming/blob/2025-2026/10_struct_union/README.md)            
 
+[11_gdb_valgrind. Отладка программ](https://github.com/kruffka/C-Programming/blob/2025-2026/11_gdb_valgrind/README.md)            
+
+
 ## 📚 О курсе
 Изучать будем с самого нуля, т.е. те кто впервые вообще слышит о программировании – **не страшно**.    
 Первым делом нам нужен **Язык Программирования**      
