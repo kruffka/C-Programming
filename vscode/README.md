@@ -122,7 +122,7 @@ C/C++ IntelliSense, debugging, and code browsing.
 
 ##  6. <a name='6'></a>Отладка
 
-[gdb в VSCode](https://github.com/kruffka/C-Programming/blob/2025-2026/11_gdb_valgrind/lecture.md#3)
+[gdb в VSCode](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/lecture.md#3)
 
 ##  7. <a name='7'></a>Сборка
 

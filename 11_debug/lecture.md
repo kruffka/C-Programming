@@ -41,7 +41,7 @@ sudo apt install gdb -y
 
 ##  2. <a name='2'></a>Компиляция программы для отладки
 
-Допустим у нас есть [исходный код](https://github.com/kruffka/C-Programming/blob/2025-2026/11_gdb_valgrind/src/gdb_ex1.c) и мы хотим его поотлаживать в отладчике.  
+Допустим у нас есть [исходный код](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/gdb_ex1.c) и мы хотим его поотлаживать в отладчике.  
 Для этого попробуем скомпилировать программу:  
 ```gcc ex1.c```  
 Получим исполняемый файл a.out и подсунем его в gdb, написав имя отладчика и через пробел имя исполняемого файла:  
@@ -120,7 +120,7 @@ help - Список некоторых команд gdb
 При выходе из gdb все точки остановы удаляются.  
 
 ###  2.1. <a name='2.1'></a>Пример 1
-Продолжим отлаживать [пример 1: gdb_ex1.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_gdb_valgrind/src/gdb_ex1.c):     
+Продолжим отлаживать [пример 1: gdb_ex1.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/gdb_ex1.c):     
 Попробуем поставить точки останова (breakpoints) на функции main() ```break main``` и в строке 5 ```br 5```:  
 ![image](https://github.com/user-attachments/assets/ff9f5201-b4d5-4565-8926-db25ca6e5eeb)   
 Увидим фидбек от компилятора, что он поставил эти точки в нужых местах. Теперь попробуем запустить программу командой ```run```:  
@@ -172,7 +172,7 @@ help - Список некоторых команд gdb
 
 ###  2.2. <a name='2.2'></a>Пример 2
 
-[Пример 2: gdb_ex2.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_gdb_valgrind/src/gdb_ex2.c)  
+[Пример 2: gdb_ex2.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/gdb_ex2.c)  
 Попробуем отладить еще пару программ, используя отладчик GDB.  
 Соберем программу и попробуем запустить ее без отладки:  
 ![image](https://github.com/user-attachments/assets/a1820867-1ffb-4c40-8617-f96d94f0c877)    
@@ -199,7 +199,7 @@ SIGBUS - похож на segfault, тоже кладет вашу програм
 
 ###  2.3. <a name='2.3'></a>Пример 3
 
-[Пример 3: gdb_ex3.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_gdb_valgrind/src/gdb_ex3.c)   
+[Пример 3: gdb_ex3.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/gdb_ex3.c)   
 Предполагается, что функция swap должна произвести обмен значениями переменных a и b. Скомпилировав и запустив программу, легко убедиться, что этого не происходит.  
 
 Попробуем запуститься в отладчике и посмотреть что не так. Установим точку останова в 11 строке и выведем значения и адреса переменных a и b:   
@@ -234,7 +234,7 @@ int main() {
 
 ###  2.4. <a name='2.4'></a>Пример 4
 
-[Пример 4: gdb_ex4.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_gdb_valgrind/src/gdb_ex4.c)   
+[Пример 4: gdb_ex4.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/gdb_ex4.c)   
 Отладчик может быть полезен в изучении поведения сложных макросов. Для этого необходимо скомпилировать программу с опцией –g3 и воспользоваться командой отладчика macro expand.  
 (gdb) break main    
 Breakpoint 1 at 0x400523   
@@ -247,7 +247,7 @@ expands to: printf("%s: ""Hello",__FILE__":""__LINE__")
 
 ###  2.5. <a name='2.5'></a>Пример 5
 
-[Пример 5: gdb_ex5.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_gdb_valgrind/src/gdb_ex5.c)   
+[Пример 5: gdb_ex5.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/gdb_ex5.c)   
 Ожидается, что будет выведена строка, символы в которой отсортированы. Фактически не будет выведено ничего. Ниже приведена сессия в отладчике, в которой демонстрируется состояние строки после сортировки:  
 ![image](https://github.com/user-attachments/assets/c4745353-5c0f-499e-9584-3d86c6f1e8e5)  
 Увидим, что printf не покажет, а именно, что '\0' - символ конца строки вылез в начало и из-за этого на экране мы ничего и не видим, т.к. printf выводит строки по символам пока не встретится '\0'.   
