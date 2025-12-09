@@ -45,7 +45,7 @@ sudo apt install gdb -y
 
 Допустим у нас есть [исходный код](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/gdb_ex1.c) и мы хотим его поотлаживать в отладчике.  
 Для этого попробуем скомпилировать программу:  
-```gcc ex1.c```  
+```gcc gdb_ex1.c```  
 Получим исполняемый файл a.out и подсунем его в gdb, написав имя отладчика и через пробел имя исполняемого файла:  
 ```gdb ./a.out```  
 При запуске увидим что-то похожее на:  
@@ -79,13 +79,13 @@ sudo apt install gdb -y
 однако при запуске программы мы все равно получим то, что ожидали.  
 
 Итак скомпилируем программу без оптимизаций (-O0) и с добавлением отладочной информации (-g):
-```gcc ex1.c -g -O0 -o ex1```  
-Получим исполняемый файл ex1, если сравнить размер с предыдущим исполняемым файлом a.out, то увидим что компилятор чего-то добавил нового в ex1:
+```gcc gdb_ex1.c -g -O0 -o gdb_ex1```  
+Получим исполняемый файл gdb_ex1, если сравнить размер с предыдущим исполняемым файлом a.out, то увидим что компилятор чего-то добавил нового в gdb_ex1:
 
 ```ls -lh```  
 ![image](https://github.com/user-attachments/assets/cceb8e6b-adce-49cf-845e-24208655ca80)    
 Этот 1 кбайт информации и есть отладочная информация. Теперь запустим новый исполняемый файл в отладчике:  
-```gdb ./ex1```  
+```gdb ./gdb_ex1```  
 ![image](https://github.com/user-attachments/assets/1cfadc4d-220f-4759-869a-339acf7757da)    
 Видим, что отладчик прочитал символы и больше не жалуются об их отсутствии. Теперь можно приступать к отладке программы.  
 
@@ -179,7 +179,7 @@ help - Список некоторых команд gdb
 Соберем программу и попробуем запустить ее без отладки:  
 ![image](https://github.com/user-attachments/assets/a1820867-1ffb-4c40-8617-f96d94f0c877)    
 Увидим что-то непонятное и страшное, хотя на первый взгляд программа совсем обычная.  
-Попробуем разобраться, возьмем и соберем с флагами для отладки: ```gcc ex2.c -g -O0```.   
+Попробуем разобраться, возьмем и соберем с флагами для отладки: ```gcc gdb_ex2.c -g -O0```.   
 Запустим в отладчике без всяких точек останова командой ```run```:    
 ![image](https://github.com/user-attachments/assets/15bc3e74-f965-4371-b32d-f886dd83265b)    
 Сразу же увидим, что отладчик остановился на строке 8 и говорит, что там какая-то ошибка связанная с какими-то "автобусами".   
@@ -271,7 +271,7 @@ expands to: printf("%s: ""Hello",__FILE__":""__LINE__")
 Если в нашей программе есть аргументы, то они добавляются в "args".  
 Вообще дебаг конфигураций можно добавлять много и называть их по-своему, имя конфигурации пишется в "name".   
   
-Соберем нашу программу ex1.c под отладкой, откроем ее в VSCode и попробуем запустить нажав зеленую стрелку во вкладке дебага:    
+Соберем нашу программу gdb_ex1.c под отладкой, откроем ее в VSCode и попробуем запустить нажав зеленую стрелку во вкладке дебага:    
 ![image](https://github.com/user-attachments/assets/e7e1f2fb-eca6-43a8-9d57-03f4fd66899f)      
 
 Программа отработала и ничего не произошло. Попробуем поставить точку останова (breakpoint), для этого наведем на строку мышкой и нажмем левой кнопкой мыши (ЛКМ):  
@@ -342,11 +342,11 @@ Valgrind довольно сильно замедляет выполнение �
   
 Рассмотрим пару простых примеров, демонстрирующих работу valgrind.  
   
-[Пример 1: ex1.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/mem_ex1.c)     
+[Пример 1: mem_ex1.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/mem_ex1.c)     
   
 Скомпилируем пример 1 с опцией -g и -O0:   
 ```bash  
-gcc ex1.c -O0 -g
+gcc mem_ex1.c -O0 -g
 ```  
 
 Чтобы запустить Valgrind передайте исполняемый файл в качестве аргумента   
@@ -370,8 +370,8 @@ valgrind --leak-cheak=yes ./a.out
 ==24897==   
 ==24897== 40 bytes in 1 blocks are definitely lost in loss record 1 of 1  
 ==24897==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)  
-==24897==    by 0x10915E: f (ex1.c:5)  
-==24897==    by 0x109180: main (ex1.c:11)  
+==24897==    by 0x10915E: f (mem_ex1.c:5)  
+==24897==    by 0x109180: main (mem_ex1.c:11)  
 
 
 Существует несколько видов утечек; две наиболее важные категории:
@@ -387,7 +387,7 @@ Memcheck также сообщает об использовании неини�
 
 
 Рассмотрим другой пример с использованием памяти после ее освобождения.    
-[Пример 2: ex2.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/mem_ex2.c)     
+[Пример 2: mem_ex2.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/mem_ex2.c)     
 Лог valgring нам покажет, что память не утекла, однако было ее использование после освобождения.  
 ![image](https://github.com/user-attachments/assets/8a2a166f-fbc4-46cf-9efe-769a96988c48)
 
@@ -416,12 +416,12 @@ The flags are, in short:
 
 Не всегда есть возможность пользоваться valgrind, например из-за его скорости или из-за того что его не установить там где будет запускаться исполняемый файл, ([живой пример с GO](https://habr.com/ru/articles/323380/)), поэтому есть еще второй вариант отладки памяти.    
 Этот вариант сильно быстрее valgrind и для его использования нужно указать при компиляции лишь одну опцию -fsanitize=address.     
-Попробуем на [первом примере ex1.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/mem_ex1.c)       
+Попробуем на [первом примере mem_ex1.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/mem_ex1.c)       
 Опция -g также как и в valgrind покажет номер строки, в которой возникает ошибка.  
 
 Компилируем и запускаем:   
 ```bash
-gcc ex1.c -g -fsanitize=address  
+gcc mem_ex1.c -g -fsanitize=address  
 ./a.out  
 ```
 Запустим и увидим, что наша программа останавилась и вывела кучу всякого текста:  
@@ -433,13 +433,13 @@ Address Sanitizer при обнаружении ошибки сразу заве
 ![image](https://github.com/user-attachments/assets/56603e40-cfd5-4b40-bf2b-a54de580a9d4)  
 Нужно при комплияции добавить флаг -fsanitize-recover=address и запустить с переменной среды окружения ASAN_OPTIONS=halt_on_error=0. Пример  
 ```bash
-gcc ex1.c -fsanitize=address -g -fsanitize-recover=address  
+gcc mem_ex1.c -fsanitize=address -g -fsanitize-recover=address  
 ASAN_OPTIONS=halt_on_error=0 ./a.out
 ```
 
-Рассмотрим [пример 3 ex3.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/mem_ex3.c) с sanitizer.   
+Рассмотрим [пример 3 mem_ex3.c](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/src/mem_ex3.c) с sanitizer.   
 ``` bash
-gcc ex1.c -fsanitize=address -g  
+gcc mem_ex3.c -fsanitize=address -g  
 ./a.out
 ```
 Запустим и сразу же обнаружим ошибку stack-buffer-overflow в строке номер 4, связанную с переполнением массива.  
