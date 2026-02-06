@@ -39,7 +39,9 @@
 
 [10_struct_union. Структуры и объединения](https://github.com/kruffka/C-Programming/blob/2025-2026/10_struct_union/README.md)            
 
-[11_debug. Отладка программ: GDB, valgrind, ASan](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/README.md)            
+[11_debug. Отладка программ: GDB, valgrind, ASan](https://github.com/kruffka/C-Programming/blob/2025-2026/11_debug/README.md)             
+
+[12_libraries. Многофайловый проект. Статические и динамические библиотеки](https://github.com/kruffka/C-Programming/blob/2025-2026/12_libraries/README.md)            
 
 
 ## 📚 О курсе
@@ -90,3 +92,6 @@
 |                      |  |
 +----------------------+  0x000000000
 ```
+
+<img src="12_libraries/img/compilation.png" width ="500">            
+
