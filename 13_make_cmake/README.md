@@ -2,6 +2,7 @@
 
 - Make
 - CMake
+- Meson и Ninja
 
 ## Ссылки
 

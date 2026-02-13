@@ -1,6 +1,25 @@
-# Системы сборки Make и CMake
+<!-- vscode-markdown-toc -->
+* 1. [Автоматизация сборки](#1)
+* 2. [Make](#2)
+	* 2.1. [Пример Makefile 1](#2.1)
+	* 2.2. [Пример Makefile 2](#2.2)
+	* 2.3. [Пример 3](#2.3)
+* 3. [CMake](#3)
+	* 3.1. [Пример CMakeLists.txt 1](#3.1)
+	* 3.2. [Пример CMakeLists.txt 2](#3.2)
+	* 3.3. [Пример 3](#3.3)
+	* 3.4. [VSCode и CMake](#3.4)
+* 4. [Ninja](#4)
+* 5. [Meson](#5)
+* 6. [Реальные проекты с ситемами сборки](#6)
 
-## Автоматизация сборки
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc --># Системы сборки Make и CMake
+
+##  1. <a name='1'></a>Автоматизация сборки
 
 Про многофайловые проекты мы поговорили на теме с [библиотеками](https://github.com/kruffka/C-Programming/blob/2025-2026/12_libraries/lecture.md)                
 
@@ -15,7 +34,7 @@
 
 Рассмотрим пару популярных инструментов:            
 
-## Make  
+##  2. <a name='2'></a>Make  
 
 **Make** - утилита для автоматизации процесса сборки программного обеспечения с помощью специального файла `Makefile`. Часто используется для проектов на C/C++, также можно встретить Makefile для выполнения команд в терминале (например при работе с docker). Понимает зависимости между файлами и собирает по уму, выбирая только измененные файлы                             
 
@@ -38,7 +57,7 @@ sudo apt update
 sudo apt install build-essential -y
 ```
 
-### Пример Makefile 1   
+###  2.1. <a name='2.1'></a>Пример Makefile 1   
 
 Рассмотрим [Пример 1](https://github.com/kruffka/C-Programming/blob/2025-2026/13_make_cmake/src/0_make/Makefile)         
 
@@ -98,7 +117,7 @@ gcc -o main main.o init.o utils.o
 make utils.o
 ```
 
-### Пример Makefile 2  
+###  2.2. <a name='2.2'></a>Пример Makefile 2  
 Посмотрим [пример 2](https://github.com/kruffka/C-Programming/blob/2025-2026/13_make_cmake/src/1_make/Makefile):        
 ```bash
 .PHONY: clean # Чтобы цель clean работала даже если у нас где-то есть файл с именем clean
@@ -146,7 +165,7 @@ clean:
 
 **run** - цель, что запускает исполняемый файл              
 
-### Пример 3  
+###  2.3. <a name='2.3'></a>Пример 3  
 В реальных проектах никто не прописывает пути к файлам и настройки компилятора вручную в каждом правиле. Для этого используют **переменные**: [пример 3](https://github.com/kruffka/C-Programming/blob/2025-2026/13_make_cmake/src/2_make)   
 
 Переменные позволяют хранить списки файлов, флаги оптимизации или пути к папкам. Обычно их пишут заглавными буквами. Чтобы создать переменную, пишем NAME = value, а чтобы использовать её (разыменовать) — $(NAME)           
@@ -243,7 +262,7 @@ logs:
 
 Но как бы make не упрощал жизнь, все равно приходится писать команды компиляции руками.. поэтому на помощь приходит CMake     
 
-## CMake  
+##  3. <a name='3'></a>CMake  
 
 **CMake** - кроcсплатформенная утилита для автоматической сборки программы из исходного кода. Если Make - это список команд для компилятора, то CMake - это инструмент более высокого уровня. Он не заменяет Make, а стоит над ним. Он работает с файлами по фамилии `CMakeLists.txt`, в которых на языке CMake описывается конфигурация и сборка проекта. Далее CMake генерит готовый к использованию Makefile
 
@@ -259,7 +278,7 @@ sudo apt update
 sudo apt install build-essential cmake -y 
 ```
 
-### Пример CMakeLists.txt 1  
+###  3.1. <a name='3.1'></a>Пример CMakeLists.txt 1  
 
 Посмотрим на все тот же маленький проект из нескольких файлов, но с CMake: [Пример 1](https://github.com/kruffka/C-Programming/blob/2025-2026/13_make_cmake/src/cmake_0/CMakeLists.txt)          
 
@@ -341,7 +360,7 @@ add_executable(main ${APP_DIR}/main.c ${SOURCES})
 
 **Самостоятельно:** поглядеть на сгенеренный Makefile, там даже есть цель help        
 
-### Пример CMakeLists.txt 2    
+###  3.2. <a name='3.2'></a>Пример CMakeLists.txt 2    
 
 Усложняем библиотеками: [Пример 2](https://github.com/kruffka/C-Programming/blob/2025-2026/13_make_cmake/src/cmake_1/CMakeLists.txt)   
 ```bash
@@ -369,7 +388,7 @@ target_link_libraries(main UTIL_LIB) # Линковка
 ```
 Из нового здесь - это библиотеки и их линковка. Чтобы собрать **статическую библиотеку** используем слово **STATIC** в `add_library()`, для **динамической SHARED**. Для линковки - `target_link_libraries()`.        
 
-### Пример 3   
+###  3.3. <a name='3.3'></a>Пример 3   
 
 Посмотрим проект, состоящий из нескольких CMakeLists.txt [Пример 3](https://github.com/kruffka/C-Programming/blob/2025-2026/13_make_cmake/src/cmake_2/CMakeLists.txt)     
 
@@ -439,7 +458,7 @@ cmake .. -DTEST_DEF=123
 ```
 Эта запись создаст переменную в cmake и внутри CMakeLists.txt отработает условие и добавится определение TEST_DEF в наш код. При запуске кода увидим новый printf() с test_def равным 123.   
 
-### VSCode и CMake
+###  3.4. <a name='3.4'></a>VSCode и CMake
 
 Хотя мы научились собирать проекты руками через терминал, современные редакторы (например, VS Code) позволяют автоматизировать и этот процесс:           
 - В VSCode можно установить расширение CMake и запускать CMake + make прям из VSCode по кнопке F7. А также хранить все переменные CMake'а в конфигурационном файле. Это немного удобнее чем всегда таскать с собой кучу опций для сборки проекта в консоли. 
@@ -450,7 +469,7 @@ https://learn.microsoft.com/ru-ru/vcpkg/get_started/get-started-vscode?pivots=sh
 https://code.visualstudio.com/docs/cpp/cmake-quickstart    
 https://stackoverflow.com/questions/73328916/how-to-set-cmake-build-configuration-in-vscode    
 
-### Ninja
+## 4. <a name='4'></a>Ninja
 
 Если проект становится по-настоящему огромным (как браузер Chrome или Android), классический make может начать подтормаживать. Для таких случаев существует Ninja
 Ninja - это быстрая и легковесная система сборки, созданная в Google.           
@@ -469,7 +488,7 @@ cmake --build build
 ```
 [Ссылка на ninja](https://github.com/ninja-build/ninja)   
 
-### Meson  
+##  5. <a name='5'></a>Meson  
 
 Если ninja конкурент make, то для CMake конкурент - Meson.         
 
@@ -482,7 +501,7 @@ Meson - это система сборки, относительно молод�
 Оставлю на Meson лишь ссылки для почитать и останавливаться тут долго не будем, т.к. последующие курсы в основном вы столкнетесь с CMake и make.   
 
 
-### Реальные проекты с ситемами сборки   
+## 6. <a name='6'></a>Реальные проекты с ситемами сборки   
 
 Лучший способ разобраться в системах сборки - посмотреть, как это сделано у других. На GitHub куча опенсурс проектов. Как найти какой-нибудь проект с открытым исходным кодом на CMake? 
 
