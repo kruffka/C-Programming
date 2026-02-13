@@ -43,6 +43,8 @@
 
 [12_libraries. Многофайловый проект. Статические и динамические библиотеки](https://github.com/kruffka/C-Programming/blob/2025-2026/12_libraries/README.md)            
 
+[13_make_cmake. Системы сборки Make и CMake](https://github.com/kruffka/C-Programming/blob/2025-2026/13_libraries/README.md)             
+
 
 ## 📚 О курсе
 Изучать будем с самого нуля, т.е. те кто впервые вообще слышит о программировании – **не страшно**.    

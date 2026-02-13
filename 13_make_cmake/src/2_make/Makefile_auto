@@ -1,0 +1,26 @@
+.PHONY: clean
+
+CC = gcc
+CFLAGS = -Wall
+TARGET = main
+INCLUDES = -I./include
+
+# Цель: берем все .o файлы и линкуем в таргет
+$(TARGET): main.o utils.o init.o
+	$(CC) $(CFLAGS) $^ -o $@
+# $@ заменится на main
+# $^ заменится на main.o utils.o init.o
+
+# Универсальное правило для объектных файлов
+# % - создаем шаблон для всех
+%.o: src/%.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+# % — это паттерн (имя файла)
+# $< — это конкретный .c файл (первая зависимость)
+# $@ — имя конкретного .o файла (цель)
+
+%.o: app/%.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	
+clean:
+	rm -rf *.o $(TARGET)
