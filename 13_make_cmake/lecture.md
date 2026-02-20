@@ -394,23 +394,21 @@ target_link_libraries(main UTIL_LIB) # Линковка
 
 Корневой CMakeLists.txt:
 ```bash
-cmake_minimum_required(VERSION 3.10) 	# Проверка версии CMake.
-										# Если версия установленой программы
-										# старее указаной, произойдёт аварийный выход.
+cmake_minimum_required(VERSION 3.10)
 
-project(hello_cmake)					# Название проекта
+project(hello_cmake)
 
-set(SOURCE_EXE main.c)					# Установка переменной со списком исходников
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-include_directories("./subdir")			# Расположение заголовочных файлов
+# Выполнить CMakeLists.txt из src/
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/src)
 
-add_executable(main ${SOURCE_EXE})		# Создает исполняемый файл с именем main
+# #define TEST_DEF 5
+add_definitions(-DTEST_DEF=5)
 
-add_subdirectory("./subdir")			# Добавление подпроекта, указывается имя дирректории
+add_executable(main app/main.c)
+target_link_libraries(main UTIL_LIB)
 
-add_definitions("-DTEST_DEF=5")			# Аналогично обьявлению в коде #define TEST_DEF 5
-
-target_link_libraries(main MY_LIB)		# Линковка программы с библиотекой
 ```
 Пойдем почти порядку.  
 include_directories() - используется для указанию компилятору подобно опции -I пути до заголовочных файлов, чтобы в исходниках в директивах #include не прописывать полные пути до заголовочников.   
@@ -419,8 +417,8 @@ add_definitions() - аналог #define в Си и опции -D при ком�
 Следующая вещь полезна когда идет речь о многофайловых проектах, содержащих множество поддиректорий и это:    
 add_subdirectory() - указываем путь до CMakeLists.txt находящегося где-то внутри проекта для сборки некоторого отдельного модуля. Вызвав данную функцию cmake нырнет в эту поддиректорию и начнет выполнять оттуда CMakeLists.txt, в котором у нас следующее содержимое:   
 ```bash
-set(SOURCE_LIB functions.c)	
-add_library(MY_LIB SHARED ${SOURCE_LIB})	# Создание дин. библиотеки с именем MY_LIB
+set(SOURCES utils.c init.c)
+add_library(UTIL_LIB STATIC ${SOURCES})
 ```
 
 Некоторые часто используемые переменные в CMake:    
@@ -456,7 +454,21 @@ endif()
 ```bash
 cmake .. -DTEST_DEF=123
 ```
-Эта запись создаст переменную в cmake и внутри CMakeLists.txt отработает условие и добавится определение TEST_DEF в наш код. При запуске кода увидим новый printf() с test_def равным 123.   
+Эта запись создаст переменную в cmake и внутри CMakeLists.txt отработает условие и добавится определение TEST_DEF в наш код. При запуске кода увидим новый printf() с test_def равным 123.        
+
+Из полезного еще можно встретить:
+- option() - создать переменную и положить в нее значение из option по умолчанию (если через -D не передается или через set())
+- if()-else()-endif() - условия в CMake, для отрицания пишется вначале слово `NOT`
+- message() - как printf для CMake, во время работы cmake будут выводиться сообщения. Бывают еще разные типы (STATUS, FATAL_ERROR, WARNING)
+```
+option(BUILD_EXTRAS "Собрать дополнительные функции" OFF)
+if(BUILD_EXTRAS)
+    message(STATUS "Дополнительные модули включены")
+    add_executable(extra_tool extra.cpp)
+else()
+    message(STATUS "Собираем только базовую версию")
+endif()
+```
 
 ###  3.4. <a name='3.4'></a>VSCode и CMake
 
