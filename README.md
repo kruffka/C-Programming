@@ -75,7 +75,8 @@
 - Что-нибудь еще, что щас не вспомню
 - Ну и немного мемов, профессия разработчика нервная.. смех полезен
 
-<img src="9_git/img/pocoyo_dance.gif"/>
+<img src="9_git/img/pocoyo_dance.gif"/> <img src="14_linked_lists/img/cute-cat-jamming-to-music.gif" width ="200">                     
+
 
 
 ```
