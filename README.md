@@ -45,7 +45,9 @@
 
 [13_make_cmake. Системы сборки Make и CMake](https://github.com/kruffka/C-Programming/blob/2025-2026/13_make_cmake/README.md)             
 
-[14_linked_lists. Big O. Связанные списки (Linked List)](https://github.com/kruffka/C-Programming/blob/2025-2026/14_linked_lists/README.md)              
+[14_linked_lists. Big O. Связанные списки (Linked List)](https://github.com/kruffka/C-Programming/blob/2025-2026/14_linked_lists/README.md)           
+
+[15_files. Файлы](https://github.com/kruffka/C-Programming/blob/2025-2026/15_files/README.md)              
 
 
 ## 📚 О курсе
