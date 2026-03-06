@@ -39,7 +39,7 @@
 - **stdin** – стандартный консольный ввод (клавиатура);    
 - **stdout** – стандартный консольный вывод (монитор);    
 - **stderr** - стандартный поток ошибок (монитор/файлы с логами);       
-Стандартные потоки открываются при каждом запуске программы      
+Стандартные потоки открываются при каждом запуске программы       
 
 Балуемся:
 [mp4 фрактал из кода на Си + linux командочки](https://github.com/kruffka/C-Programming/blob/2025-2026/15_files/src/fractal.c)            
@@ -234,8 +234,8 @@ size_t fwrite(void *ptr, size_t size, size_t nmemb, FILE *stream);
 ```
 - Эта функция записывает указанное количество байтов в файл. Возвращает количество успешно записанных элементов (должно быть равно nmemb)
 
-https://github.com/kruffka/C-Programming/blob/master/2025-2026/15_files/binary_bmp.c
-<img src="./img/uii_aa-1.bmp" width ="300">         
+https://github.com/kruffka/C-Programming/blob/master/2025-2026/15_files/src/binary_bmp.c                 
+<img src="./img/uii_aa-1.bmp" width ="300">          
 
 ###  5.3. <a name='move'></a>Функции для смещения каретки
 ```c
