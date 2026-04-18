@@ -51,6 +51,8 @@
 
 [16_threads. Потоки. SIMD](https://github.com/kruffka/C-Programming/blob/2025-2026/16_threads/README.md)                 
 
+[17_testing. Тестирование ПО](https://github.com/kruffka/C-Programming/blob/2025-2026/17_testing/README.md)                 
+
 ## 📚 О курсе
 Изучать будем с самого нуля, т.е. те кто впервые вообще слышит о программировании – **не страшно**.    
 Первым делом нам нужен **Язык Программирования**      
