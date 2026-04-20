@@ -16,7 +16,7 @@ Decrypted: The quick brown fox jumps over the lazy dog
 === Test 2: Vigenere Cipher ===
 Original: ATTACKATDAWN
 Keyword: LEMON
-Encrypted: ATTACKATDAWN
+Encrypted: LXFOPVEFRNHR
 
 === Test 3: RC4-like Cipher ===
 Original: Secret message
