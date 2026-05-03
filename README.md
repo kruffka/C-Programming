@@ -53,6 +53,10 @@
 
 [17_code_quality. Тестирование ПО. Чистый код](https://github.com/kruffka/C-Programming/blob/2025-2026/17_code_quality/README.md)                 
 
+[18_cpp_basics. C++ начало](https://github.com/kruffka/C-Programming/blob/2025-2026/18_cpp_basics/README.md)                 
+
+[19_vibecode. Вайбкодинг](https://github.com/kruffka/C-Programming/blob/2025-2026/19_vibecode/README.md)                          
+
 ## 📚 О курсе
 Изучать будем с самого нуля, т.е. те кто впервые вообще слышит о программировании – **не страшно**.    
 Первым делом нам нужен **Язык Программирования**      
