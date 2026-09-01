@@ -10,9 +10,9 @@
 
 ## Ссылки
 
-[Лекция](0_hello_world/lecture.md)      
-[Презентация](0_hello_world/0_hello_world.pdf)         
-[Примеры](0_hello_world/src/)           
+[Лекция](lecture.md)      
+[Презентация](0_hello_world.pdf)         
+[Примеры](src/)           
 
 -----------
 
