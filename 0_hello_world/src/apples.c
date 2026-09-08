@@ -6,5 +6,5 @@ int main()
 
     printf("I have %d apples\n", apples);
 
-    return 0;
+    return 1;
 }
