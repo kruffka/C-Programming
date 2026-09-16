@@ -6,9 +6,9 @@
 
 ## Ссылки
 
-[Лекция](https://github.com/kruffka/C-Programming/blob/2025-2026/2_loops/lecture.md)      
-[Презентация](https://github.com/kruffka/C-Programming/blob/2025-2026/2_loops/2_loops.pdf)         
-[Примеры](https://github.com/kruffka/C-Programming/blob/2025-2026/2_loops/src/)           
+[Лекция](lecture.md)      
+[Презентация](2_loops.pdf)         
+[Примеры](src/)           
 
 -----------
 
