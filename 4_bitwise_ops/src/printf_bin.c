@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void print_bin(int dec) {
+    // в обратном порядке for (int i = 0; i < sizeof(dec)*8 ; i++)
+    for (int i = sizeof(dec)*8 - 1; i >= 0 ; i--) {
+        printf("%d", (dec >> i) & 1);
+    }
+    printf("\n");
+}
+
+int main(void) {
+
+    char dec = 123;
+    char hex = 0x7b; // or 0x7B
+    char oct = 0173;
+    char bin = 0b01111011;
+
+    printf("%d == %d == %d == %d\n", dec, hex, oct, bin);
+    printf("%d == 0x%x == 0%o == 0b", dec, hex, oct);
+
+
+    print_bin(bin);
+
+}
