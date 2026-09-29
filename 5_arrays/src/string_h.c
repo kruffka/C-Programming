@@ -1,37 +1,42 @@
 #include <stdio.h>
-#include <string.h> // Для работы с функциями обработки строк
+#include <string.h>
 
 int main(void) {
 
-    char str1[128] = "hello";
-    char str2[128] = "bye bye";
+    char login[128] = "ivan";
 
-    puts(str1); // Вывод на экран строки str1
-    puts(str2); // Вывод на экран строки str2
+    printf("Логин: %s\n", login);
+    printf("Длина логина: %zu\n", strlen(login));
 
-    int n = strlen(str1);    // Длина строки, не включая '\0'
-    printf("strlen of str1 is %d\n", n);
-    
-    strcpy(str1, "privet"); // копирование "privet" в str1
-    puts(str1); // Вывод на экран строки str1
+    strcpy(login, "student"); // логин сменили на другой
+    printf("Новый логин: %s\n", login);
 
-    strncpy(str2, str1, sizeof(str1));  // Копирование str1 в str2, но размер не более sizeof(str1)
+    // Собираем email: копируем логин и дописываем домен
+    char email[128];
+    strncpy(email, login, sizeof(email));
+    email[sizeof(email) - 1] = '\0'; // strncpy может не закрыть строку
+    strncat(email, "@sibguti.ru", sizeof(email) - strlen(email) - 1);
+    printf("Email: %s\n\n", email);
 
-    if (strcmp(str1, str2) == 0) {  // Сравнение двух строк
-        printf("str1 is equal to str2\n"); // 0 если строки идентичны
+    // Проверка пароля при входе
+    char saved[64]   = "qwerty123";
+    char entered[64] = "qwerty123";
+    if (strcmp(saved, entered) == 0) {
+        puts("Пароль верный");
     } else {
-        // Положительное число – если строки отличаются и код первого отличающегося символа в строке str1 больше кода символа на той же позиции в строке str2.
-        // Отрицательное число – если строки отличаются и код первого отличающегося символа в строке str1 меньше кода символа на той же позиции в строке str2.
-        printf("str1 is not equal to str2\n");
+        puts("Пароль неверный");
     }
 
-    strcat(str1, str2); // Функция добавляет строку source_str к строке destination_str. При этом первая строка должна быть достаточно большая, чтобы вместить вторую строку
-    printf("str after cat is: %s\n", str1);
+    // Ввод имени с клавиатуры
+    char name[64];
+    puts("\nВведите имя:");
+    fgets(name, sizeof(name), stdin);
 
-    puts("Input my name:");
-    char input_str[256];
-    fgets(input_str, sizeof(input_str), stdin); // Ввод с клавиатуры строки в input_str, максимальный размер 256 символов
-    printf("My name is: %s", input_str); // Вывод на экран строки input_str
+    size_t len = strlen(name);
+    if (len > 0 && name[len - 1] == '\n') {
+        name[len - 1] = '\0'; // срезаем перевод строки от fgets
+    }
+    printf("Привет, %s!\n", name);
 
     return 0;
 }

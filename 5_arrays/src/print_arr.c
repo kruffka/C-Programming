@@ -1,23 +1,23 @@
 #include <stdio.h>
 
-#define N 5
-#define M 3
+#define SENSORS 5
+#define SUBJECTS 3
 
-void print_arr(int n, int array[n]) {
-
+void print_arr(int n, const int values[n], const char title[]) {
+    printf("%s: ", title);
     for (int i = 0; i < n; i++) {
-        printf("array[%d] = %d\n", i, array[i]);
+        printf("%d ", values[i]);
     }
     printf("\n");
 }
 
-int main() {
+int main(void) {
 
-    int scores[N] = {77, 43, 100, 55, 11};
-    print_arr(N, scores);
+    int temp[SENSORS] = {-5, -2, 0, 3, 1}; // датчики на улице, C
+    print_arr(SENSORS, temp, "Температура по датчикам");
 
-    int array[M] = {1, 2, 3};
-    print_arr(M, array);
+    int scores[SUBJECTS] = {5, 4, 3}; // оценки за семестр
+    print_arr(SUBJECTS, scores, "Оценки");
 
     return 0;
 }
