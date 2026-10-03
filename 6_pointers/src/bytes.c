@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
 
     int a = 0xC0FFEE;
     char *ptr = (char *)&a;

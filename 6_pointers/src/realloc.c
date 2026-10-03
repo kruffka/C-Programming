@@ -5,7 +5,7 @@
 #define N 10
 #define M 5
 
-int main() {
+int main(void) {
 
     char *str = malloc(N * sizeof(char)); // выделяем массив размером N байт
     if (str == NULL) return -1;

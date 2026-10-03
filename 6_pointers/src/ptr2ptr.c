@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
 
     char a = 'A';
     char *ptr1;
@@ -10,10 +10,10 @@ int main() {
 
     ptr2 = &ptr1;
 
-    printf("ptr2 = %p\n", ptr2);
-    printf("*ptr2 = %p\n", *ptr2);
+    printf("ptr2 = %p\n", (void *)ptr2);
+    printf("*ptr2 = %p\n", (void *)*ptr2);
     printf("**ptr2 = %c\n", **ptr2);   // A
-    printf("&ptr = %p\n", &ptr2);
+    printf("&ptr = %p\n", (void *)&ptr2);
 
     return 0;
 }

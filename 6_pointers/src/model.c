@@ -13,7 +13,7 @@ int main(void) {
     short e = 1;            // стек
     void *ptr = malloc(20); // куча
 
-    printf("a = %d, b = %d, c = %d, d = %lf, e = %hd, ptr = %p\n", a, b, c, d, e, ptr);
+    printf("a = %d, b = %d, c = %d, d = %lf, e = %hd, ptr = %p\n", a, b, c, d, e, (void *)ptr);
 
     free(ptr);
     ptr = NULL;

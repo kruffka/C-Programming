@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
 
     // Выделяем 12 байт (3 размера int)
     int *arr = malloc(3*sizeof(int));           
