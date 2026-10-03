@@ -8,7 +8,8 @@
 [2_loops. Циклы](2_loops/README.md)               
 [3_functions_p1. Функции ч.1](3_functions_p1/README.md)               
 [4_bitwise_ops. Битовые операции](4_bitwise_ops/README.md)               
-[5_arrays. Массивы. Матрицы. Строки](5_arrays/README.md)        
+[5_arrays. Массивы. Матрицы. Строки](5_arrays/README.md)
+[6_pointers. Указатели. Динамическая память](6_pointers/README.md)        
        
 
 ## 📚 О курсе
