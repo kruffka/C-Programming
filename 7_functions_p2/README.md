@@ -8,6 +8,6 @@
 
 ## Ссылки
 
-[Лекция](lecture.md)
-[Презентация](7_functions_p2.pdf)
+[Лекция](lecture.md)  
+[Презентация](7_functions_p2.pdf)  
 [Примеры](src/)

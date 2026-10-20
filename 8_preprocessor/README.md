@@ -9,6 +9,6 @@
 
 ## Ссылки
 
-[Лекция](lecture.md)
-[Презентация](8_preprocessor.pdf)
+[Лекция](lecture.md)  
+[Презентация](8_preprocessor.pdf)  
 [Примеры](src/)

@@ -4,7 +4,7 @@
 
 ## Ссылки
 
-[Лекция](lecture.md)
-[Презентация](6_pointers.pdf)
+[Лекция](lecture.md)  
+[Презентация](6_pointers.pdf)  
 [Примеры](src/)
 
