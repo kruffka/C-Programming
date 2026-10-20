@@ -3,16 +3,16 @@
 
 ## 📖 Лекции
 
-[0_hello_world. Вводная лекция. Компиляция. Переменные и константы](0_hello_world/README.md)              
-[1_conditions. Ввод с клавиатуры. Условия (и операторы). Type Casting](1_conditions/README.md)               
-[2_loops. Циклы](2_loops/README.md)               
-[3_functions_p1. Функции ч.1](3_functions_p1/README.md)
-[4_bitwise_ops. Битовые операции](4_bitwise_ops/README.md)
-[5_arrays. Массивы. Матрицы. Строки](5_arrays/README.md)
-[6_pointers. Указатели. Динамическая память](6_pointers/README.md)
-[7_functions_p2. Функции ч.2. Указатели на функции, callbacks, API](7_functions_p2/README.md)
-[8_preprocessor. Препроцессор. Директивы, макросы, условная компиляция](8_preprocessor/README.md)
-[9_git. Система контроля версий Git](9_git/README.md)
+[0_hello_world. Вводная лекция. Компиляция. Переменные и константы](0_hello_world/README.md)                 
+[1_conditions. Ввод с клавиатуры. Условия (и операторы). Type Casting](1_conditions/README.md)                  
+[2_loops. Циклы](2_loops/README.md)                
+[3_functions_p1. Функции ч.1](3_functions_p1/README.md)           
+[4_bitwise_ops. Битовые операции](4_bitwise_ops/README.md)           
+[5_arrays. Массивы. Матрицы. Строки](5_arrays/README.md)           
+[6_pointers. Указатели. Динамическая память](6_pointers/README.md)          
+[7_functions_p2. Функции ч.2. Указатели на функции, callbacks, API](7_functions_p2/README.md)             
+[8_preprocessor. Препроцессор. Директивы, макросы, условная компиляция](8_preprocessor/README.md)             
+[9_git. Система контроля версий Git](9_git/README.md)           
        
 
 ## 📚 О курсе
