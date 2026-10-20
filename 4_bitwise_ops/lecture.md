@@ -195,8 +195,7 @@ char a = ~3;
 Результат будет зависить от того знаковый тип данных или нет:           
 ~a = -4 для signed char (%hhd) и 252 для unsigned char (%hhu)              
 
-Можно проверить себя на [онлайн калькуляторе:](https://www.rapidtables.com/convert/number/binary-to-decimal.html?x=11111100
-)                       
+Можно проверить себя на [онлайн калькуляторе:](https://www.rapidtables.com/convert/number/binary-to-decimal.html?x=11111100)
 <img src="img/bin_to_dec.png" width="400"/>                           
 
 **Важно:** Чтобы не запутаться с минусом, **обычно** при работе с **битовыми операциями** создают переменные **unsigned** типа                            
@@ -299,7 +298,7 @@ printf("second byte of a = %x\n", c); // c == 0xFF
 
 ####  3.6.3. <a name='3.6.3'></a>Получение конкретного бита
 
-(x >> i) & 1
+(x >> i) & 1  
 где
 - x - исходное число,
 - i - номер искомого бита
