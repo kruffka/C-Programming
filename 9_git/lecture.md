@@ -670,3 +670,19 @@ https://github.dev/kruffka/C-Programming
 | Почему .gitignore не работает? | он игнорирует только неотслеживаемые файлы, уже закоммиченные не тронет |
 
 Каждый вопрос - это либо разобранный выше раздел, либо команда из шпаргалки в 3.7. Перед собеседованием достаточно прогнать таблицу и руками повторить команды в тренировочном репозитории.
+
+####  Где посмотреть на живой Git
+
+Когда захочется увидеть, как выглядят настоящие ветки и merge, откройте эти репозитории. На GitHub график лежит во вкладке Insights -> Network, в терминале - `git log --oneline --graph --all --decorate`. Большой репо качайте мелко: `git clone --depth=100`.
+
+- [torvalds/linux](https://github.com/torvalds/linux) - самый ветвистый граф из существующих. Линус мержит деревья подсистем настоящими merge-коммитами, а не squash, теги релизов подписаны GPG. Смотреть: octopus-merge и `git log --show-signature`.
+- [git/git](https://github.com/git/git) - git разрабатывает сам себя. Интеграционные ветки `master`, `next`, `seen`, `maint`. Смотреть: как фича каскадом едет `seen -> next -> master`.
+- [microsoft/vscode](https://github.com/microsoft/vscode) - trunk-based: короткие ветки, squash-merge в `main`, ежемесячные релиз-ветки `release/1.XX`.
+- [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) - squash + релиз-ветки `release-1.31`, cherry-pick бэкпортов, автоматический merge-queue.
+- [rust-lang/rust](https://github.com/rust-lang/rust) - бот bors склеивает несколько одобренных PR в один коммит "Rollup merge".
+- [llvm/llvm-project](https://github.com/llvm/llvm-project) - монорепозиторий: clang, llvm и всё остальное в одном репо. Trunk-based, squash, релиз-ветки `release/19.x`.
+- [redis/redis](https://github.com/redis/redis) - ветка `unstable` (аналог develop) + стабильные релиз-ветки, ближе всего к git flow.
+- [openssl/openssl](https://github.com/openssl/openssl) - cherry-pick security-фиксов в старые ветки, наглядный пример backport'а.
+- [curl/curl](https://github.com/curl/curl) - почти линейная история, патчи ребейзят поверх `master`.
+
+По одной фишке на репо: linux - настоящие merge и подписанные теги, git - каскад интеграционных веток, vscode и kubernetes - как squash превращает ветку в один коммит, rust - merge-queue, openssl - cherry-pick исправлений в старые ветки.
