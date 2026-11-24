@@ -13,6 +13,7 @@
 [7_functions_p2. Функции ч.2. Указатели на функции, callbacks, API](7_functions_p2/README.md)             
 [8_preprocessor. Препроцессор. Директивы, макросы, условная компиляция](8_preprocessor/README.md)             
 [9_git. Система контроля версий Git](9_git/README.md)           
+[10_struct. Структуры. Объединения. Перечисления](10_struct/README.md)           
        
 
 ## 📚 О курсе
