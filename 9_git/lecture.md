@@ -322,7 +322,7 @@ git push
 ```bash
 git push -u origin main
 ```
-Дальше хватает простого `git push`.
+Дальше хватает простого `git push`.  
 В VSCode это кнопка со стрелочкой вверх, Sync Changes.
 
 Обратная операция - забрать чужие изменения:
@@ -621,7 +621,7 @@ git submodule add <url> <каталог>
 ```
 Документация: [git-submodule](https://git-scm.com/docs/git-submodule). Тема на будущее: руками подмодули нужны редко, но в чужих проектах попадаются и обычно пугают. Итого, сабмодуль - это просто репозиторий внутри репозитория.
 
-**Git для больших файлов и моделей.** Git плохо переваривает большие бинарники: гигабайтная модель в обычном репозитории раздувает историю так, что клонировать становится больно. Для этого придумали git-lfs (Large File Storage): сами файлы лежат отдельно, а в репозитории только указатели на них.
+**Git для больших файлов и моделей.** Git плохо переваривает большие бинарники: гигабайтная модель в обычном репозитории раздувает историю так, что клонировать становится больно. Для этого придумали git-lfs (Large File Storage): сами файлы лежат отдельно, а в репозитории только указатели на них.  
 На этом же устроен Hugging Face - по сути GitHub для ИИ-моделей: там репозитории с ИИшками и датасетами, их так же клонируют, рядом карточки моделей, демки и обсуждения. Если пойдете в ИИ, будете встречать его чаще, чем GitHub.
 
 **GitLens.** Расширение для VSCode, показывает автора и коммит у каждой строки прямо в редакторе. Иногда единственный способ понять, зачем в коде эта странная проверка - посмотреть, кто ее добавил и с каким сообщением.
@@ -649,7 +649,7 @@ https://github.dev/kruffka/C-Programming
 
 [Опционально]: Слово для расширения кругозора: **Монорепозитории.** Google и Meta держат весь код в одном гигантском репо - атомарные коммиты и удобный рефакторинг, но обычный git на таких размерах тормозит, нужны специальные инструменты              
 
-**Графы и CI.** У GitLab и GitHub есть веб-графики истории - на большом проекте (хоть ядро Linux) можно долго смотреть, как сотни людей мержат ветки.
+**Графы и CI.** У GitLab и GitHub есть веб-графики истории - на большом проекте (хоть ядро Linux) можно долго смотреть, как сотни людей мержат ветки.  
 А еще на GitHub есть Actions: при push или открытии PR автоматически запускаются проверки - сборка, тесты, линтеры. В нормальных проектах PR не мержат, пока эти проверки не зеленые. До своего CI в курсе дойдем позже, но выглядит это как список галочек внизу pull request.
 
 ####  Частые вопросы про гит (собесы и тд)
@@ -673,16 +673,13 @@ https://github.dev/kruffka/C-Programming
 
 ####  Где посмотреть на живой Git
 
-Когда захочется увидеть, как выглядят настоящие ветки и merge, откройте эти репозитории. На GitHub график лежит во вкладке Insights -> Network, в терминале - `git log --oneline --graph --all --decorate`. Большой репо качайте мелко: `git clone --depth=100`.
+Когда захочется увидеть, как выглядят настоящие ветки и merge, откройте эти репозитории. На GitHub график лежит во вкладке Insights -> Network, в терминале - `git log --oneline --graph --all --decorate`. Большой репо качайте мелко: `git clone --depth=100`.          
 
-- [torvalds/linux](https://github.com/torvalds/linux) - самый ветвистый граф из существующих. Линус мержит деревья подсистем настоящими merge-коммитами, а не squash, теги релизов подписаны GPG. Смотреть: octopus-merge и `git log --show-signature`.
-- [git/git](https://github.com/git/git) - git разрабатывает сам себя. Интеграционные ветки `master`, `next`, `seen`, `maint`. Смотреть: как фича каскадом едет `seen -> next -> master`.
-- [microsoft/vscode](https://github.com/microsoft/vscode) - trunk-based: короткие ветки, squash-merge в `main`, ежемесячные релиз-ветки `release/1.XX`.
-- [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes) - squash + релиз-ветки `release-1.31`, cherry-pick бэкпортов, автоматический merge-queue.
-- [rust-lang/rust](https://github.com/rust-lang/rust) - бот bors склеивает несколько одобренных PR в один коммит "Rollup merge".
-- [llvm/llvm-project](https://github.com/llvm/llvm-project) - монорепозиторий: clang, llvm и всё остальное в одном репо. Trunk-based, squash, релиз-ветки `release/19.x`.
-- [redis/redis](https://github.com/redis/redis) - ветка `unstable` (аналог develop) + стабильные релиз-ветки, ближе всего к git flow.
-- [openssl/openssl](https://github.com/openssl/openssl) - cherry-pick security-фиксов в старые ветки, наглядный пример backport'а.
-- [curl/curl](https://github.com/curl/curl) - почти линейная история, патчи ребейзят поверх `master`.
-
-По одной фишке на репо: linux - настоящие merge и подписанные теги, git - каскад интеграционных веток, vscode и kubernetes - как squash превращает ветку в один коммит, rust - merge-queue, openssl - cherry-pick исправлений в старые ветки.
+- [torvalds/linux](https://github.com/torvalds/linux) - самый ветвистый граф из существующих. Линус мержит деревья подсистем настоящими merge-коммитами, а не squash, теги релизов подписаны GPG. Смотреть: octopus-merge и `git log --show-signature`.           
+- [git/git](https://github.com/git/git) - git разрабатывает сам себя. Интеграционные ветки `master`, `next`, `seen`, `maint`. Смотреть: как фича каскадом едет `seen -> next -> master`.            
+- [microsoft/vscode](https://github.com/microsoft/vscode) - trunk-based: короткие ветки, squash-merge в `main`, ежемесячные релиз-ветки `release/1.XX`.          
+- [obsproject/obs-studio](https://github.com/obsproject/obs-studio) - OBS Studio, в котором стримят на Twitch и YouTube. Написан на C/C++ и полностью открыт.                  
+- [telegramdesktop/tdesktop](https://github.com/telegramdesktop/tdesktop) - тот самый Telegram, которым пользуешься каждый день. Код клиента лежит в открытом доступе.                     
+- [godotengine/godot](https://github.com/godotengine/godot) - бесплатный игровой движок Godot. Хочешь делать игры - вот их исходники.
+- [blender/blender](https://github.com/blender/blender) - Blender, в котором делают 3D         
+- [ollama/ollama](https://github.com/ollama/ollama) - Ollama для запуска нейросетей локально                      
